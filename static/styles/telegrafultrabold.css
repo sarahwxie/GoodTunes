@@ -1,0 +1,7 @@
+@font-face {
+	font-family: 'telegrafultrabold';
+	src: url(../../assets/fonts/telegraf_ultrabold_800-webfont.woff2) format('woff2'),
+	url(../../assets/fonts/telegraf_ultrabold_800-webfont.woff) format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
