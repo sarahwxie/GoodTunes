@@ -8,6 +8,9 @@ app = Flask(__name__)
 def index():
     return render_template("home.html")
 
+@app.route('/newuser')
+def new_user():
+    return render_template("signup.html")
 
 if __name__ == "__main__":
     # runs the application on the repl development server
