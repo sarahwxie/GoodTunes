@@ -8,6 +8,19 @@ app = Flask(__name__)
 def index():
     return render_template("home.html")
 
+@app.route('/landing/<selection>', methods=['GET', 'POST'])
+def landing(selection):
+    # POST redirection to content page
+    if request.method == 'POST':
+        form = request.form
+        page = form['page']
+        return redirect(url_for(page))
+    # GET landing page render based off of "selection"
+    selected_list = key_2_proj[selection] # selection is "key" used to pull project details from dictionary
+    heading = selected_list[TITLE]
+    projects = selected_list[PROJECTS]
+    return render_template("homesite/landing.html", heading=heading, menus=menus, projects=projects)
+
 @app.route('/newuser')
 def new_user():
     return render_template("signup.html")
