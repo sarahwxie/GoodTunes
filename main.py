@@ -38,6 +38,12 @@ def login():
     else:
         return render_template("login.html")
 
+@app.route('/search/')
+def search():
+    return render_template("search.html")
+
+
+
 
 if __name__ == "__main__":
     # runs the application on the repl development server
