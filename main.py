@@ -21,14 +21,22 @@ def landing(selection):
     projects = selected_list[PROJECTS]
     return render_template("homesite/landing.html", heading=heading, menus=menus, projects=projects)
 
-@app.route('/newuser')
+
+@app.route('/newuser/')
 def new_user():
     return render_template("signup.html")
 
+
 # connects /hello path of server to render hello.html
-@app.route('/login/')
+@app.route('/login/',  methods=["GET", "POST"])
 def login():
-    return render_template("login.html")
+    # What happens after you
+    if request.method == "POST":
+        return redirect("/")
+
+    # User reached route via GET (as by clicking a link or via redirect)
+    else:
+        return render_template("login.html")
 
 
 if __name__ == "__main__":

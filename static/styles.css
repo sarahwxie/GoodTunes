@@ -1,2 +1,12 @@
+/*
 
+The CSS file is being left empty for the time being.
+
+Instead of using a .css file, we are including an html file with our styles within the <style></style> block on base. html
+
+The reason for this is because our browsers save the styles.css file into the cache, meaning that if we update the
+styles.css file, we won't see the updates on our website. This workaround ensures that the styles are re-compiled
+every time.
+
+*/
 
