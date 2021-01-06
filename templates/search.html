@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<section style="display: flex;flex-direction: column;justify-content: space-between;width: auto;align-items: center; background-color:black;">
+<section id="searchSection">
     <div style="display: block; margin-top: 101px;">
-        <h1 style="color:white;font-size: 10vw;line-height: 0.8;width: auto;margin-left: auto;margin-right: auto;letter-spacing: -1vw;text-align: right;">Search Playlists and Users</h1>
+        <h1 id="searchHeading">Search Playlists and Users</h1>
     </div>
 
-    <div style="width: 100%;max-width: 1020px;padding-left: 50px;padding-right: 50px;margin-left: auto;margin-right: auto;position: relative;bottom: -36px;">
+    <div id="searchDiv">
         <div style="margin-bottom: 15px;position: relative;">
             <img src="/static/assets/search.svg" style="position: absolute;top: 23px;left: 19px;"/>
             <input type="text" id="myInput" placeholder="Search by name..."
