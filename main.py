@@ -1,5 +1,5 @@
 from flask import Flask, flash, jsonify, redirect, url_for, render_template, request, session, current_app, g
-import songs
+
 
 # Configuring the flask application
 app = Flask(__name__)
@@ -29,6 +29,19 @@ def user(usr):
 def new_user():
     return render_template("signup.html")
 
+
+@app.route('/signup', methods=['POST','GET'])
+def signup():
+    if request.method == "POST":
+        newuser = request.form["newusername"] # using name as dictionary key
+        # redirects us to the user page
+        return redirect(url_for("newuser", newusr=newuser))
+    else:
+        return render_template("login.html")
+
+@app.route("/<usr>")
+def newuser(newusr):
+    return f"<h1>{newusr}</h1>"
 
 @app.route('/search/')
 def search():
