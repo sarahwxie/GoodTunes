@@ -1,4 +1,5 @@
 from flask import Flask, flash, jsonify, redirect, url_for, render_template, request, session, current_app, g
+import songs
 
 # Configuring the flask application
 app = Flask(__name__)
@@ -31,7 +32,8 @@ def new_user():
 
 @app.route('/search/')
 def search():
-    return render_template("search.html")
+        return render_template("search.html", songsdb = songs.songsdata)
+
 
 
 if __name__ == "__main__":
