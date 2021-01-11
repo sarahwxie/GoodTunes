@@ -6,6 +6,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 from custom import apology
 
+
 # Configuring the flask application
 app = Flask(__name__)
 
@@ -67,9 +68,23 @@ def new_user():
         return render_template("signup.html")
 
 
+@app.route('/signup', methods=['POST','GET'])
+def signup():
+    if request.method == "POST":
+        newuser = request.form["newusername"] # using name as dictionary key
+        # redirects us to the user page
+        return redirect(url_for("newuser", newusr=newuser))
+    else:
+        return render_template("login.html")
+
+@app.route("/<usr>")
+def newuser(newusr):
+    return f"<h1>{newusr}</h1>"
+
 @app.route('/search/')
 def search():
-    return render_template("search.html")
+        return render_template("search.html", songsdb = songs.songsdata)
+
 
 
 if __name__ == "__main__":
