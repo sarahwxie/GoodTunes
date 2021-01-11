@@ -55,6 +55,7 @@ def new_user():
             return apology("passwords must match", 403)
 
         fullname = request.form.get("first") + request.form.get("last")
+
         # Insert all the values into the database
         db.engine.execute(text("INSERT INTO users (username, hash, name) VALUES (:user, :hash, :name);").execution_options(autocommit=True),
                           user=request.form.get("username"),
