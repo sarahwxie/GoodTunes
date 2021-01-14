@@ -5,7 +5,7 @@ from werkzeug.exceptions import default_exceptions, HTTPException, InternalServe
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from custom import apology
-
+import songs
 
 # Configuring the flask application
 app = Flask(__name__)
@@ -81,9 +81,18 @@ def signup():
 def newuser(newusr):
     return f"<h1>{newusr}</h1>"
 
-@app.route('/search/')
+@app.route('/search/', methods=['GET', 'POST'])
 def search():
-        return render_template("search.html", songsdb = songs.songsdata)
+    if request.method == "POST":
+        search = request.form["search"]
+        songs1 = [str(song).lower() for song in songs.songsdata]
+        for song in songs1:
+            if search in song:
+                print(song)
+        return render_template("search.html", songsdb=songs.songsdata)
+    else:
+        songs1 = songs.songsdata
+        return render_template("search.html", songsdb=songs1)
 
 
 
