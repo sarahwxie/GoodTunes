@@ -1,6 +1,9 @@
 # GoodTunes
 This is our second trimester project for AP CS Principles. GoodTunes is an aspiring social media platform where users can select songs from a database to create playlists, then share those playlists with others. These songs will be analyzed and be selected in the overview for a "AP CSP Wrapped."
 
+### How to run Goodtunes
+
+
 # Goals
 
 ### ✔️ Completed Goals ✔️
@@ -19,9 +22,14 @@ This is our second trimester project for AP CS Principles. GoodTunes is an aspir
 # Big Ticket Items
 Note: this information can also be found on our [scrum board](https://github.com/sarahwxie/GoodTunes/projects/1)
 
-### Homepage and Navbar
+### Homepage, Navbar, and styles
+Our homepage code can be found [here](templates/home.html), our navbar code can be found [here](templates/nav.html), and our css code can be found [here](static/styles.css).
 
-### Login/Sign Up Pages
+You can evaluate this big ticket item by 
+
+All four members of our group worked on this big ticket item together. Doing this required 
+
+### Login/Sign Up Pages and User Dashboard
 
 ### Search Page
 
