@@ -44,7 +44,7 @@ Sarah did this idk
 
 # 1/15 Individual + Scrum Master Grading
 Ida Mobini: I created the songs database and passed it into main.py so the search function would work. Find my work in [main.py](main.py) and [songs.py](songs.py). 
-* Indivual grading: 4/5 
+* Individual Grading: 4/5 
 
 Sarah Xie: 
 * Individual Grading: 
