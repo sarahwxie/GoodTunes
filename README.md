@@ -5,7 +5,8 @@ This is our second trimester project for AP CS Principles. GoodTunes is an aspir
 Visit 76.88.112.116:3000 the public IP address to access the website or clone it on your own machine by:
 
 Installing all necessary packages with `pip install -r requirements.txt`
-Running using `python run.py`
+
+And running using `python run.py`
 
 
 # Goals
