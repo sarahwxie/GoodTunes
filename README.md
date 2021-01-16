@@ -23,7 +23,7 @@ You can clone our code and run it on your own machine, or visit 76.88.112.116:30
 Note: this information can also be found on our [scrum board](https://github.com/sarahwxie/GoodTunes/projects/1)
 
 ### Homepage, Navbar, and styles
-Our homepage code can be found [here](templates/home.html), our navbar code can be found [here](templates/nav.html), and our css code can be found [here](static/styles.css).
+Our homepage code can be found [here](templates/home.html), our navbar code can be found [here](templates/nav.html), and our css code can be found [here](templates/styles.html).
 
 You can evaluate this big ticket item by visiting our website (see IP above, or clone our code) and clicking through our different pages. 
 
