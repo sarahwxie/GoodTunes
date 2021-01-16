@@ -52,6 +52,7 @@ You can view the automatic update feature by clicking on the **signup** button a
 # 1/15 Individual + Scrum Master Grading
 Ida Mobini: I created the songs database and passed it into main.py so the search function would work, as well as coded a for loop and retrieved the user input using POST methods. Find my work in [main.py](main.py) and [songs.py](songs.py). 
 * Individual Grading: 4/5 
+* Scrum Master Grading: 13/15
 
 Sarah Xie: I created the sqlite database and integrated it with [main.py](main.py) and [signup.html](templates/signup.html). I also created a custom functions file [custom.py](custom.py) for custom functions, inclduing an apology function that throws errors when users provide incorrect inputs. This required learning SQLite syntax. 
 * Individual Grading: 5/5
