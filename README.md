@@ -39,13 +39,15 @@ The UI of the search page was done by Sarah and the page itself can be found [he
 
 Evaluate this big ticket item by searching for a song on our website. Note that we only have 400 songs currently, so you may not find what you are specifically looking for. Instead try a key word or an artist. Right now, it will only show you the first song that the loop finds, but we hope to have this fixed in the future. 
 
-### SQLite Database
-Sarah did this idk
+### SQLite Database - Possible extra credit?
+The SQLite database was created by downloading the sqlite.exe application files from the sqlite [website](https://www.sqlite.org/download.html) and creating a database with a users table. Then, signup.html was altered to include a form that posted data to main.py, which then adds the database to the table in real time using INSERT SQL statements. Additionally, the werkzeug.security module was used to hash the passwords using sha256 encryption to ensure that plaintext passwords weren't stored in the database. Sarah worked on this feature. 
+
+Evaluate this big ticket item by dowloading this repo, navigating to [this directory](https://github.com/sarahwxie/GoodTunes/tree/main/models), and opening the terminal by typing `cmd` into the search bar. You can view the tables by typing ``sqlite3 myDB.db`` and then ``SELECT * FROM users; ``
+You can view the automatic update feature by clicking on the **signup** button accessed via the homepage and creating an account. If you run the SELECT statement after creating an account you'll see your new account appear in the database. 
 
 # 1/15 Individual + Scrum Master Grading
 Ida Mobini: I created the songs database and passed it into main.py so the search function would work. Find my work in [main.py](main.py) and [songs.py](songs.py). 
 * Individual Grading: 4/5 
-* Scrum Master Grading: N/A
 
 Sarah Xie: 
 * Individual Grading: 
@@ -56,7 +58,7 @@ Nivu Rethnakar: I worked on and finished on the Login/Sign Up Page relink and cr
 * Scrum Master Grading: 15/15
 
 Risa Iwazaki: I worked on starting up the login profile page and the GET POST aspect of the sign up page. I also deployed our web server onto my raspberry pi so we could access the website using the public IP address. 
-* Individual Grading: 4/5
+* Individual Grading: 
 * Scrum Master Grading: 15/15 
 
 
