@@ -40,9 +40,10 @@ Ida Mobini:
 
 Sarah Xie:
 
-Nivu Rethnaker:
+Nivu Rethnakar:
+  I worked on and finished on the Login/Sign Up Page relink and created the Profile page that they're now linking to. I also started working on the HTML and CS for the Profile page.
 
-Risa Iwazaki:
+Risa Iwazaki: I worked on starting up the login profile page and the GET POST aspect of the sign up page. I also deployed our web server onto my raspberry pi so we could access the website using the public IP address.   
 
 
 # Creators
