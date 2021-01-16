@@ -62,7 +62,7 @@ Nivu Rethnakar: I worked on and finished on the Login/Sign Up Page relink and cr
 * Scrum Master Grading: 15/15
 
 Risa Iwazaki: I worked on starting up the login profile page and the GET POST aspect of the sign up page. I also deployed our web server onto my raspberry pi so we could access the website using the public IP address. 
-* Individual Grading: 
+* Individual Grading: 3/5
 * Scrum Master Grading: 15/15 
 
 
