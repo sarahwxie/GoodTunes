@@ -32,7 +32,7 @@ All four members of our group worked on this big ticket item together. Doing thi
 ### Login/Sign Up Pages and User Dashboard
 The login and signup pages can be found [here](templates/login.html) and [here](templates/signup.html). The code that leads the user to a new page after signing in can be found in [main.py](main.py). Risa and Nivu worked on this.
 
-Evaluate this big ticket item by 
+Evaluate this big ticket item by creating an account and signing in. 
 
 ### Search Page
 The UI of the search page was done by Sarah and the page itself can be found [here](templates/search.html). Ida did the initial code that searched through the database of songs in response to user input, and Sarah added to it to create the display. The finished product that allows the user to find songs according to key words can be found in [main.py](main.py). 
