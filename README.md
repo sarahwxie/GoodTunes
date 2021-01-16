@@ -2,7 +2,7 @@
 This is our second trimester project for AP CS Principles. GoodTunes is an aspiring social media platform where users can select songs from a database to create playlists, then share those playlists with others. These songs will be analyzed and be selected in the overview for a "AP CSP Wrapped."
 
 ### How to run Goodtunes
-You can clone our code and run it on your own machine, or visit the public IP address to access the website: 76.88.112.116:3000. **Note that at the time of submission we were unable to deploy the most recent version. By the time you are grading, this may have been fixed, but currently the best way to view our big ticket items (most notably the SEARCH function) is to clone our repository. We apologize for the inconvenience.**
+You can clone our code and run it on your own machine, or visit 76.88.112.116:3000 the public IP address to access the website. 
 
 # Goals
 
@@ -40,7 +40,7 @@ The UI of the search page was done by Sarah and the page itself can be found [he
 Evaluate this big ticket item by searching for a song on our website. Note that we only have 400 songs currently, so you may not find what you are specifically looking for. Instead try a key word or an artist. Right now, it will only show you the first song that the loop finds, but we hope to have this fixed in the future. 
 
 ### SQLite Database - Possible extra credit?
-The SQLite database was created by downloading the sqlite.exe application files from the sqlite [website](https://www.sqlite.org/download.html) and creating a database with a users table. Then, signup.html was altered to include a form that posted data to main.py, which then adds the database to the table in real time using INSERT SQL statements. Additionally, the werkzeug.security module was used to hash the passwords using sha256 encryption to ensure that plaintext passwords weren't stored in the database. Sarah worked on this feature. 
+The SQLite database was created by downloading the sqlite.exe application files from the sqlite [website](https://www.sqlite.org/download.html) and creating a database with a users table. Then, signup.html was altered to include a form that posted data to main.py, which then adds the database to the table in real time using INSERT SQL statements. Additionally, the `werkzeug.security` module was used to hash the passwords using sha256 encryption to ensure that plaintext passwords weren't stored in the database. Sarah worked on this feature. 
 
 Evaluate this big ticket item by dowloading this repo, navigating to [this directory](https://github.com/sarahwxie/GoodTunes/tree/main/models), and opening the terminal by typing `cmd` into the search bar. You can view the tables by typing ``sqlite3 myDB.db`` and then ``SELECT * FROM users; ``
 You can view the automatic update feature by clicking on the **signup** button accessed via the homepage and creating an account. If you run the SELECT statement after creating an account you'll see your new account appear in the database. 
@@ -49,16 +49,16 @@ You can view the automatic update feature by clicking on the **signup** button a
 Ida Mobini: I created the songs database and passed it into main.py so the search function would work. Find my work in [main.py](main.py) and [songs.py](songs.py). 
 * Individual Grading: 4/5 
 
-Sarah Xie: I created the sqlite database and integrated it with [main.py](main.py) and [signup.html](templates/signup.html). I also created a custom functions file [custom.py](custom.py) for custom functions, inclduing an apology function that throws errors when users provide incorrect inputs. 
-* Individual Grading: 5/5 
-* Scrum Master Grading: 15/15 
+Sarah Xie: I created the sqlite database and integrated it with [main.py](main.py) and [signup.html](templates/signup.html). I also created a custom functions file [custom.py](custom.py) for custom functions, inclduing an apology function that throws errors when users provide incorrect inputs. This required learning SQLite syntax. 
+* Individual Grading: 
+* Scrum Master Grading: 14/15 
 
 Nivu Rethnakar: I worked on and finished on the Login/Sign Up Page relink and created the Profile page that they're now linking to. I also started working on the HTML and CS for the Profile page. Find my work in [main.py](main.py), [login.html](login.html), and [profile.html](profile.html).
 * Individual Grading: 4/5
 * Scrum Master Grading: 15/15
 
 Risa Iwazaki: I worked on starting up the login profile page and the GET POST aspect of the sign up page. I also deployed our web server onto my raspberry pi so we could access the website using the public IP address. 
-* Individual Grading: 3/5
+* Individual Grading: 
 * Scrum Master Grading: 15/15 
 
 
