@@ -88,7 +88,7 @@ def newuser(newusr):
     return f"<h1>{newusr}</h1>"
 
 
-@app.route('/search/', methods=['GET', 'POST'])
+@app.route('/search', methods=['GET', 'POST'])
 def search():
     if request.method == "POST":
         search = request.form["search"]
