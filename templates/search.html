@@ -24,4 +24,17 @@
     </div>
 </section>
 
+{% if song == None %}
+<style>
+    .searchResult{
+    display: None;
+    }
+</style>
+{% endif %}
+
+<div class="searchResult">
+    <!-- Search Results -->
+    <p><strong>{{song[1]}}: </strong> {{song[0]}} song by {{song[2]}}</p>
+</div>
+
 {% endblock %}

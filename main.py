@@ -77,13 +77,16 @@ def signup():
     else:
         return render_template("login.html")
 
+
 @app.route('/profile/')
 def profile():
     return render_template("profile.html")
 
+
 @app.route("/<usr>")
 def newuser(newusr):
     return f"<h1>{newusr}</h1>"
+
 
 @app.route('/search/', methods=['GET', 'POST'])
 def search():
@@ -93,10 +96,18 @@ def search():
         for song in songs1:
             if search in song:
                 print(song)
-        return render_template("search.html", songsdb=songs.songsdata)
+                song = song.split("', '")
+                print(song)
+                song[0] = song[0][2:]
+                song[2] = song[2][:-2]
+                print(song)
+                print(song[0] + song[1] + song[2])
+                return render_template("search.html", songsdb=songs.songsdata, song=song)
+        return render_template("search.html", songsdb=songs.songsdata, song=None)
     else:
         songs1 = songs.songsdata
-        return render_template("search.html", songsdb=songs1)
+        return render_template("search.html", songsdb=songs1, song=None)
+
 
 
 
