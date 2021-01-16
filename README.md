@@ -2,7 +2,11 @@
 This is our second trimester project for AP CS Principles. GoodTunes is an aspiring social media platform where users can select songs from a database to create playlists, then share those playlists with others. These songs will be analyzed and be selected in the overview for a "AP CSP Wrapped."
 
 ### How to run Goodtunes
-You can clone our code and run it on your own machine, or visit 76.88.112.116:3000 the public IP address to access the website. 
+Visit 76.88.112.116:3000 the public IP address to access the website or clone it on your own machine by:
+
+Installing all necessary packages with `pip install -r requirements.txt`
+Running using `python run.py`
+
 
 # Goals
 
