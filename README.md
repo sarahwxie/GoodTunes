@@ -35,6 +35,15 @@ All four members of our group worked on this big ticket item together. Doing thi
 
 ### SQLite Database
 
+# 1/15 Grading
+Ida Mobini:
+
+Sarah Xie:
+
+Nivu Rethnaker:
+
+Risa Iwazaki:
+
 
 # Creators
 Ida Mobini, Sarah Xie, Risa Iwazaki, Nivedita Rethnakar 
