@@ -41,6 +41,7 @@ Ida Mobini:
 Sarah Xie:
 
 Nivu Rethnaker:
+  I worked on and finished on the Login/Sign Up Page relink and created the Profile page that they're now linking to. I also started working on the HTML and CS for the Profile page.
 
 Risa Iwazaki:
 
