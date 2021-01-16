@@ -50,15 +50,15 @@ Ida Mobini: I created the songs database and passed it into main.py so the searc
 * Individual Grading: 4/5 
 
 Sarah Xie: I created the sqlite database and integrated it with [main.py](main.py) and [signup.html](templates/signup.html). I also created a custom functions file [custom.py](custom.py) for custom functions, inclduing an apology function that throws errors when users provide incorrect inputs. 
-* Individual Grading: 
-* Scrum Master Grading: 14/15 
+* Individual Grading: 5/5 
+* Scrum Master Grading: 15/15 
 
 Nivu Rethnakar: I worked on and finished on the Login/Sign Up Page relink and created the Profile page that they're now linking to. I also started working on the HTML and CS for the Profile page. Find my work in [main.py](main.py), [login.html](login.html), and [profile.html](profile.html).
 * Individual Grading: 4/5
 * Scrum Master Grading: 15/15
 
 Risa Iwazaki: I worked on starting up the login profile page and the GET POST aspect of the sign up page. I also deployed our web server onto my raspberry pi so we could access the website using the public IP address. 
-* Individual Grading: 
+* Individual Grading: 3/5
 * Scrum Master Grading: 15/15 
 
 
