@@ -42,6 +42,10 @@ Evaluate this big ticket item by searching for a song on our website. Note that 
 ### SQLite Database - Possible extra credit?
 The SQLite database was created by downloading the sqlite.exe application files from the sqlite [website](https://www.sqlite.org/download.html) and creating a database with a users table. Then, signup.html was altered to include a form that posted data to main.py, which then adds the database to the table in real time using INSERT SQL statements. Additionally, the `werkzeug.security` module was used to hash the passwords using sha256 encryption to ensure that plaintext passwords weren't stored in the database. Sarah worked on this feature. 
 
+How the table was created. Note that usernames as well as user IDs must be unique.
+
+![sqlite image](static/assets/Capture.PNG)
+
 Evaluate this big ticket item by dowloading this repo, navigating to [this directory](https://github.com/sarahwxie/GoodTunes/tree/main/models), and opening the terminal by typing `cmd` into the search bar. You can view the tables by typing ``sqlite3 myDB.db`` and then ``SELECT * FROM users; ``
 You can view the automatic update feature by clicking on the **signup** button accessed via the homepage and creating an account. If you run the SELECT statement after creating an account you'll see your new account appear in the database. 
 
@@ -58,7 +62,7 @@ Nivu Rethnakar: I worked on and finished on the Login/Sign Up Page relink and cr
 * Scrum Master Grading: 15/15
 
 Risa Iwazaki: I worked on starting up the login profile page and the GET POST aspect of the sign up page. I also deployed our web server onto my raspberry pi so we could access the website using the public IP address. 
-* Individual Grading: 3/5
+* Individual Grading: 
 * Scrum Master Grading: 15/15 
 
 
