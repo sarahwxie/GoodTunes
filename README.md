@@ -45,6 +45,7 @@ Sarah did this idk
 # 1/15 Individual + Scrum Master Grading
 Ida Mobini: I created the songs database and passed it into main.py so the search function would work. Find my work in [main.py](main.py) and [songs.py](songs.py). 
 * Individual Grading: 4/5 
+* Scrum Master Grading: N/A
 
 Sarah Xie: 
 * Individual Grading: 
@@ -55,7 +56,7 @@ Nivu Rethnakar: I worked on and finished on the Login/Sign Up Page relink and cr
 * Scrum Master Grading: 15/15
 
 Risa Iwazaki: I worked on starting up the login profile page and the GET POST aspect of the sign up page. I also deployed our web server onto my raspberry pi so we could access the website using the public IP address. 
-* Individual Grading: 
+* Individual Grading: 4/5
 * Scrum Master Grading: 15/15 
 
 
