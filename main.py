@@ -4,7 +4,7 @@ from sqlalchemy.sql import text
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from custom import apology
+from custom import apology, convert
 import songs
 
 # Configuring the flask application
@@ -18,6 +18,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = dbURI
 db = SQLAlchemy(app)
 
+# set up the session
+app.secret_key = "According to all known laws of aviation, there is no way a bee should be able to fly."
+
 
 @app.route('/')
 def index():
@@ -28,6 +31,9 @@ def index():
 def login():
     if request.method == "POST":
         user = request.form["username"]  # using name as dictionary key
+
+        # make this unique later
+        session["user_id"] = 1
         # redirects us to the user page
         return redirect(url_for("user", usr=user))
     else:
@@ -58,20 +64,22 @@ def new_user():
         fullname = request.form.get("first") + request.form.get("last")
 
         # Insert all the values into the database
-        db.engine.execute(text("INSERT INTO users (username, hash, name) VALUES (:user, :hash, :name);").execution_options(autocommit=True),
-                          user=request.form.get("username"),
-                          hash=generate_password_hash(request.form.get("password")),
-                          name=fullname)
+        db.engine.execute(
+            text("INSERT INTO users (username, hash, name) VALUES (:user, :hash, :name);").execution_options(
+                autocommit=True),
+            user=request.form.get("username"),
+            hash=generate_password_hash(request.form.get("password")),
+            name=fullname)
 
         return redirect("/login")
     else:
         return render_template("signup.html")
 
 
-@app.route('/signup', methods=['POST','GET'])
+@app.route('/signup', methods=['POST', 'GET'])
 def signup():
     if request.method == "POST":
-        newuser = request.form["newusername"] # using name as dictionary key
+        newuser = request.form["newusername"]  # using name as dictionary key
         # redirects us to the user page
         return redirect(url_for("newuser", newusr=newuser))
     else:
@@ -80,7 +88,16 @@ def signup():
 
 @app.route('/profile/')
 def profile():
-    return render_template("profile.html")
+    session.clear()
+    session["user_id"] = 1
+
+    """Show portfolio of stocks"""
+    # compute rows
+    resultproxy = db.engine.execute(text("SELECT * FROM users WHERE id=:id;").execution_options(autocommit=True),
+                              id=session["user_id"])
+
+    user = convert(resultproxy)
+    return render_template("profile.html", user=user)
 
 
 @app.route("/<usr>")
@@ -107,8 +124,6 @@ def search():
     else:
         songs1 = songs.songsdata
         return render_template("search.html", songsdb=songs1, song=None)
-
-
 
 
 if __name__ == "__main__":

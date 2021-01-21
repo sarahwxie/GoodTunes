@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS 'users' (
+	'id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
+	'username' TEXT NOT NULL, 
+	'hash' TEXT NOT NULL, 
+	'name' TEXT NOT NULL,
+	'bio'  varchar(200) DEFAULT "Hi I'm a newcomer to GoodTunes and I love all things music! Follow my playlists or friend me! I'd love to get to know you! In my free time, you can find me at the local record shop eating tape."
+);
+
+CREATE UNIQUE INDEX 'username' ON "users" ("username");

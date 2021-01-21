@@ -30,16 +30,16 @@
     <div class="profile">
         <div style="display: grid; grid-template-rows: 50px 30px 50px; height: 40%; row-gap: 5px;">
             <div>
-                <h1 style="display:inline-block;"><strong>John Doe</strong></h1>
+                <h1 style="display:inline-block;"><strong>{{user["name"]}}</strong></h1>
             </div>
-            <p style="margin-top:-10px;">@username</p>
+            <p style="margin-top:-10px;">@{{user["username"]}}</p>
             <p style="max-width: 50%">
-                Hi I'm a newcomer to GoodTunes and I love all things music! Follow my playlists or friend me! I'd love
-                to get to know you! In my free time, you can find me at the local record shop eating tape.
+                {{user["bio"]}}
             </p>
         </div>
     </div>
 
 </div>
+
 
 {% endblock %}
