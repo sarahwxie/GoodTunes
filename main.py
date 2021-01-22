@@ -4,7 +4,7 @@ from sqlalchemy.sql import text
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from custom import apology, convert
+from custom import apology, convert, convertList
 import songs
 
 # Configuring the flask application
@@ -25,6 +25,16 @@ app.secret_key = "According to all known laws of aviation, there is no way a bee
 @app.route('/')
 def index():
     return render_template("home.html")
+
+
+@app.route('/wrapped')
+def wrapped():
+    resultproxy = db.engine.execute(
+        text("SELECT * FROM users;").execution_options(autocommit=True))
+
+    users = convertList(resultproxy)
+    print(users)
+    return render_template("wrapped.html",users=users)
 
 
 @app.route('/login', methods=['POST', 'GET'])
@@ -117,11 +127,6 @@ def profile():
 
     user = convert(resultproxy)
     return render_template("profile.html", user=user)
-
-
-@app.route("/<usr>")
-def newuser(newusr):
-    return f"<h1>{newusr}</h1>"
 
 
 @app.route('/search', methods=['GET', 'POST'])
