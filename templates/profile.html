@@ -20,6 +20,13 @@
         margin-top: 23vh;
 
     }
+    .editButton {
+        background-color: #FFECCE;
+        color: black;
+        border-radius: 100px;
+        padding-left: 20px;
+        padding-right: 20px;
+
 
     </style>
 </head>
@@ -36,9 +43,12 @@
             <p style="max-width: 50%">
                 {{user["bio"]}}
             </p>
+            <div class="editButton">
+                Change Photo
+                <input type="file" name="file"/>
+            </div>
         </div>
     </div>
-
 </div>
 
 
