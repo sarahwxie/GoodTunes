@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="clearblock">
-    <form action="/login" method="post" style="display:inline-grid;">
+    <form action="/login" method="POST" style="display:inline-grid;">
         <h2 style="text-align: center; margin-left:auto; margin-right:auto;">Login</h2>
         <div class="form-group">
             <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
@@ -11,7 +11,7 @@
         <div class="form-group">
             <input class="form-control" name="password" placeholder="Password" type="password">
         </div>
-        <a href="/profile" class="yellowBtn"><strong>login</strong></a>
+        <button class="btn btn-primary sButton" type="submit">Sign Up</button>
     </form>
 
 </div>

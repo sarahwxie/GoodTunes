@@ -30,19 +30,29 @@ def index():
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     if request.method == "POST":
-        user = request.form["username"]  # using name as dictionary key
+        formUser = request.form["username"]  # using name as dictionary key
+        resultproxy = db.engine.execute(
+            text("SELECT * FROM users WHERE username=:username;").execution_options(autocommit=True),
+            username=formUser)
 
+        user = convert(resultproxy)
         # make this unique later
-        session["user_id"] = 1
+        session["user_id"] = user['id']
+
         # redirects us to the user page
-        return redirect(url_for("user", usr=user))
+        return redirect(url_for("user", usr=user["username"], user=user))
     else:
         return render_template("login.html")
 
 
 @app.route("/<usr>")
 def user(usr):
-    return f"<h1>{usr}</h1>"
+    # compute rows
+    resultproxy = db.engine.execute(text("SELECT * FROM users WHERE id=:id;").execution_options(autocommit=True),
+                                    id=session["user_id"])
+
+    user = convert(resultproxy)
+    return render_template("profile.html", user=user)
 
 
 @app.route('/newuser/', methods=["GET", "POST"])
@@ -91,10 +101,9 @@ def profile():
     session.clear()
     session["user_id"] = 1
 
-    """Show portfolio of stocks"""
     # compute rows
     resultproxy = db.engine.execute(text("SELECT * FROM users WHERE id=:id;").execution_options(autocommit=True),
-                              id=session["user_id"])
+                                    id=session["user_id"])
 
     user = convert(resultproxy)
     return render_template("profile.html", user=user)
