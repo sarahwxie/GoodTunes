@@ -11,9 +11,9 @@
 <!-- our users -->
 <div class="container">
     <div class="row">
-        <div class="search" style="width:100%">
+        <div style="width:100%; margin-bottom: 4rem; font-size: 2.4rem; position: relative;">
             <label>Database Users</label>
-            <p>Click on a Profile to see the profile page! Also notice the encrypted passwords!</p>
+            <p style="font-size:24px">Click on a Profile to see the profile page! Also notice the encrypted passwords!</p>
         </div>
 
         <!-- start of list items -->
@@ -49,9 +49,8 @@
     <div class="row">
         <div class="search" style="width:100%">
             <label>Users generated using the RandomUser.me API</label>
-            <p>Notice the searchbar! We're testing the search method here, before deploying to the main search bar.</p>
-            <input type="search" data-search="data-search" placeholder="Search API generated users..." style="font-size:1.5rem;"/>
-            <button class="search__clear">&times;</button>
+            <p style="font-size:24px">Notice the searchbar! We're testing the search method here, before deploying to the main search bar.</p>
+            <input type="search" data-search="data-search" placeholder="Search users by Username" style="font-size:1.5rem;"/>
         </div>
         <div class="list" id="list" data-searchable="data-searchable"></div>
     </div>
@@ -78,7 +77,7 @@ const template = listItem => {
 		listItem.name.last
 	}</strong>
 					  <span class="list-item__info">@${listItem.login.username} <br>  ${
-		listItem.password
+		listItem.login.password
 	}</span>
 					</div>
 			  <button type="button" class="list-item__button">
