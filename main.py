@@ -44,14 +44,15 @@ def login():
         # redirects us to the user page
         return redirect(url_for("user", usr=user["username"]))
     else:
-        return render_template("prettyForm.html", error=False)
+        return render_template("login.html", error=False)
 
 
 @app.route("/<usr>")
 def user(usr):
     # compute rows
-    resultproxy = db.engine.execute(text("SELECT * FROM users WHERE username=:username;").execution_options(autocommit=True),
-                                    username=usr)
+    resultproxy = db.engine.execute(
+        text("SELECT * FROM users WHERE username=:username;").execution_options(autocommit=True),
+        username=usr)
 
     user = convert(resultproxy)
     if user == False:
@@ -79,15 +80,16 @@ def new_user():
         elif request.form.get("password") != request.form.get("confirmation"):
             return apology("passwords must match", 403)
 
-        fullname = request.form.get("first") + request.form.get("last")
+        fullname = request.form.get("name")
+        print(request.form.get("bio") == '')
 
         # Insert all the values into the database
         db.engine.execute(
-            text("INSERT INTO users (username, hash, name) VALUES (:user, :hash, :name);").execution_options(
+            text("INSERT INTO users (username, hash, name, bio) VALUES (:user, :hash, :name, :bio);").execution_options(
                 autocommit=True),
             user=request.form.get("username"),
             hash=generate_password_hash(request.form.get("password")),
-            name=fullname)
+            name=fullname, bio=request.form.get("bio"))
 
         return redirect("/login")
     else:
