@@ -4,7 +4,7 @@ from sqlalchemy.sql import text
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from custom import apology
+from custom import apology, convert, convertList
 import songs
 
 # Configuring the flask application
@@ -18,25 +18,60 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = dbURI
 db = SQLAlchemy(app)
 
+# set up the session
+app.secret_key = "According to all known laws of aviation, there is no way a bee should be able to fly."
+
 
 @app.route('/')
 def index():
     return render_template("home.html")
 
 
+@app.route('/wrapped')
+def wrapped():
+    resultproxy = db.engine.execute(
+        text("SELECT * FROM users;").execution_options(autocommit=True))
+
+    users = convertList(resultproxy)
+    print(users)
+    return render_template("wrapped.html",users=users)
+
+
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     if request.method == "POST":
-        user = request.form["username"]  # using name as dictionary key
+        formUser = request.form["username"]  # using name as dictionary key
+        resultproxy = db.engine.execute(
+            text("SELECT * FROM users WHERE username=:username;").execution_options(autocommit=True),
+            username=formUser)
+
+        user = convert(resultproxy)
+
+        # troubleshooting
+        if user == False:
+            return render_template("login.html", error=True)
+
         # redirects us to the user page
-        return redirect(url_for("user", usr=user))
+        return redirect(url_for("user", usr=user["username"]))
     else:
-        return render_template("login.html")
+        return render_template("login.html", error=False)
 
 
 @app.route("/<usr>")
 def user(usr):
-    return f"<h1>{usr}</h1>"
+    # compute rows
+    resultproxy = db.engine.execute(
+        text("SELECT * FROM users WHERE username=:username;").execution_options(autocommit=True),
+        username=usr)
+
+    user = convert(resultproxy)
+    if user == False:
+        user = {'id': 404, 'username': 'iDontExist',
+                'hash': 'password hash',
+                'name': 'That user does not exist!', 'bio': "You probably typed a name in the search bar. The user "
+                                                            "you searched for either doesn't exist or deleted their "
+                                                            "account"}
+    return render_template("profile.html", user=user)
 
 
 @app.route('/newuser/', methods=["GET", "POST"])
@@ -55,23 +90,26 @@ def new_user():
         elif request.form.get("password") != request.form.get("confirmation"):
             return apology("passwords must match", 403)
 
-        fullname = request.form.get("first") + request.form.get("last")
+        fullname = request.form.get("name")
+        print(request.form.get("bio") == '')
 
         # Insert all the values into the database
-        db.engine.execute(text("INSERT INTO users (username, hash, name) VALUES (:user, :hash, :name);").execution_options(autocommit=True),
-                          user=request.form.get("username"),
-                          hash=generate_password_hash(request.form.get("password")),
-                          name=fullname)
+        db.engine.execute(
+            text("INSERT INTO users (username, hash, name, bio) VALUES (:user, :hash, :name, :bio);").execution_options(
+                autocommit=True),
+            user=request.form.get("username"),
+            hash=generate_password_hash(request.form.get("password")),
+            name=fullname, bio=request.form.get("bio"))
 
         return redirect("/login")
     else:
         return render_template("signup.html")
 
 
-@app.route('/signup', methods=['POST','GET'])
+@app.route('/signup', methods=['POST', 'GET'])
 def signup():
     if request.method == "POST":
-        newuser = request.form["newusername"] # using name as dictionary key
+        newuser = request.form["newusername"]  # using name as dictionary key
         # redirects us to the user page
         return redirect(url_for("newuser", newusr=newuser))
     else:
@@ -80,12 +118,15 @@ def signup():
 
 @app.route('/profile/')
 def profile():
-    return render_template("profile.html")
+    session.clear()
+    session["user_id"] = 1
 
+    # compute rows
+    resultproxy = db.engine.execute(text("SELECT * FROM users WHERE id=:id;").execution_options(autocommit=True),
+                                    id=session["user_id"])
 
-@app.route("/<usr>")
-def newuser(newusr):
-    return f"<h1>{newusr}</h1>"
+    user = convert(resultproxy)
+    return render_template("profile.html", user=user)
 
 
 @app.route('/search', methods=['GET', 'POST'])
@@ -107,8 +148,6 @@ def search():
     else:
         songs1 = songs.songsdata
         return render_template("search.html", songsdb=songs1, song=None)
-
-
 
 
 if __name__ == "__main__":

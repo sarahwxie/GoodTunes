@@ -23,6 +23,18 @@ h2 {
     background-size: 100%
 }
 
+.heroHead2 {
+    height: 90vh;
+    display:flex;
+    background-color: clear;
+    justify-content:center;
+    flex-direction: column;
+    background-image: url({{ url_for('static', filename='background.png') }});
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: 100%
+}
 .tunesTitle {
     font-size: 57px;
     color:white;
@@ -136,13 +148,15 @@ h2 {
     margin-right: auto;
     position: relative;
     bottom: -36px;
+
 }
 
-#myInput {
+#formInput {
     padding-left: 75px;
     padding-top: 13px;
     padding-right: 12px;
     padding-bottom: 8px;
+    background-color:white;
     width: 100%;height: 70px;
     margin-left: -5px;
     border: 1px solid transparent;
@@ -154,4 +168,19 @@ h2 {
     box-shadow: 0px 14px 45px -5px rgba(45, 62, 80, 0.12), 0px 0px 5px 0px rgba(45, 62, 0, 0.06), 0px 0px 0px 2px #f5f8fa;
 }
 
+#myInput {
+    font-family: 'Open Sans';
+    color: #333;
+    line-height: 20px;
+    font-size: 28px;
+    border:none;
+    width: 100%
+}
 
+#myInput:hover,
+#myInput:active,
+#myInput:focus
+{
+    border:none;
+    outline:none;
+}
