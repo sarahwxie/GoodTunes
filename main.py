@@ -36,22 +36,30 @@ def login():
             username=formUser)
 
         user = convert(resultproxy)
-        # make this unique later
-        session["user_id"] = user['id']
+
+        # troubleshooting
+        if user == False:
+            return render_template("login.html", error=True)
 
         # redirects us to the user page
-        return redirect(url_for("user", usr=user["username"], user=user))
+        return redirect(url_for("user", usr=user["username"]))
     else:
-        return render_template("login.html")
+        return render_template("prettyForm.html", error=False)
 
 
 @app.route("/<usr>")
 def user(usr):
     # compute rows
-    resultproxy = db.engine.execute(text("SELECT * FROM users WHERE id=:id;").execution_options(autocommit=True),
-                                    id=session["user_id"])
+    resultproxy = db.engine.execute(text("SELECT * FROM users WHERE username=:username;").execution_options(autocommit=True),
+                                    username=usr)
 
     user = convert(resultproxy)
+    if user == False:
+        user = {'id': 404, 'username': 'iDontExist',
+                'hash': 'password hash',
+                'name': 'That user does not exist!', 'bio': "You probably typed a name in the search bar. The user "
+                                                            "you searched for either doesn't exist or deleted their "
+                                                            "account"}
     return render_template("profile.html", user=user)
 
 

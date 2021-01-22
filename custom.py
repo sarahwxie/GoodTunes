@@ -18,4 +18,8 @@ def convert(resultproxy):
             d = {**d, **{column: value}}
         a.append(d)
 
-    return a[0]
+    try:
+        a = a[0]
+    except:
+        return False
+    return a
