@@ -115,6 +115,9 @@ def signup():
     else:
         return render_template("login.html")
 
+@app.route('/apjournal/')
+def apjournal():
+    return render_template("apjournal.html")
 
 @app.route('/profile/')
 def profile():
