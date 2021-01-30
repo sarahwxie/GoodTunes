@@ -8,6 +8,8 @@ Install all necessary packages with `pip install -r requirements.txt`
 
 Run using `python run.py`
 
+# Easter Egg
+Currently, our easter egg is accessible through the navigation bar, but this won't be true in future updates. Find it [here](templates/apjournal.html).
 
 # Goals
 
