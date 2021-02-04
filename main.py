@@ -150,6 +150,9 @@ def search():
         return render_template("search.html", songsdb=songs1, song=None)
     # Ida was here
 
+@app.route('/create', methods=['GET', 'POST'])
+def create():
+    return render_template("playlistcreate.html")
 
 if __name__ == "__main__":
     # runs the application on the repl development server
