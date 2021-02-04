@@ -34,7 +34,7 @@ def wrapped():
 
     users = convertList(resultproxy)
     print(users)
-    return render_template("wrapped.html",users=users)
+    return render_template("wrapped.html", users=users)
 
 
 @app.route('/login', methods=['POST', 'GET'])
@@ -114,6 +114,11 @@ def signup():
         return redirect(url_for("newuser", newusr=newuser))
     else:
         return render_template("login.html")
+
+
+@app.route('/apjournal/')
+def apjournal():
+    return render_template("apjournal.html")
 
 
 @app.route('/profile/')
