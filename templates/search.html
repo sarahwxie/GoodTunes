@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
+<head>
+    <title>GoodTunes | Search</title>
+    <style>
+        {% include 'wrappedStyles.html' %}
+    </style>
+</head>
 
+<body>
+<!-- the search banner -->
 <section id="searchSection">
     <div style="display: block; margin-top: 101px;">
         <h1 id="searchHeading">Search Playlists and Users</h1>
@@ -9,31 +17,59 @@
     <div id="searchDiv">
         <div style="margin-bottom: 15px;position: relative;">
             <img src="/static/assets/search.svg" style="position: absolute;top: 23px;left: 19px;"/>
-            <form action="/search" method="POST" id="formInput">
-                <input type="text" class="form" name="search" id="myInput"  placeholder="Search"/>
-            </form>
-            <!-- {% for song in songsdb %}
-                {% if myInput in song %}
-                    <li> {{myInput}} </li>
-                {% endif %}
-            {% endfor %} -->
-
+            <div id="formInput">
+                <input type="text" id="myInput" placeholder="Search here..."/>
+            </div>
         </div>
-
     </div>
 </section>
 
-{% if song == None %}
-<style>
-    .searchResult{
-    display: None;
-    }
-</style>
-{% endif %}
-
-<div class="searchResult">
-    <!-- Search Results -->
-    <p><strong>{{song[1]}}: </strong> {{song[0]}} song by {{song[2]}}</p>
+<!-- show me the songs -->
+<div class="container">
+    <div class="row">
+        <div class="list" id="list">
+            {% for song in songs %}
+                <div class="list-item" style="display:none;">
+                    <div class="list-item__avatar">
+                        <img class="logo" src="/static/assets/music.png">
+                    </div>
+                    <div class="list-item__content">
+                        <strong class="searchable"> {{ song[1] }}</strong>
+                        <span class="list-item__info">{{ song[2] }} <br> Genre: {{ song[0] }} </span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
+
+<script>
+
+var input = document.getElementById("myInput");
+input.addEventListener("keydown", function (e) {
+    searchFunc();
+});
+
+    // Search
+    function searchFunc(){
+        input = document.getElementById("myInput");
+        var filter = input.value.toLowerCase();
+
+        var container = document.getElementById("list");
+        var elements = container.getElementsByClassName("list-item");
+        for (i = 0; i < elements.length; i++) {
+            elements[i].style.display = "flex";
+            // elements[i].style.display = "none";
+            var title = elements[i].textContent.trim()
+            if (title.toLowerCase().indexOf(input.value) != -1) {
+                elements[i].style.display = "flex";
+            }
+            else{
+                elements[i].style.display = "none";
+            }
+
+        }
+    }
+</script>
 
 {% endblock %}

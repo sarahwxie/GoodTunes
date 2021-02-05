@@ -136,24 +136,10 @@ def profile():
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
-    if request.method == "POST":
-        search = request.form["search"]
-        songs1 = [str(song).lower() for song in songs.songsdata]
-        for song in songs1:
-            if search in song:
-                print(song)
-                song = song.split("', '")
-                print(song)
-                song[0] = song[0][2:]
-                song[2] = song[2][:-2]
-                print(song)
-                print(song[0] + song[1] + song[2])
-                return render_template("search.html", songsdb=songs.songsdata, song=song)
-        return render_template("search.html", songsdb=songs.songsdata, song=None)
-    else:
-        songs1 = songs.songsdata
-        return render_template("search.html", songsdb=songs1, song=None)
-    # Ida was here
+    songs1 = songs.songsdata
+    songs1.pop(0)
+    return render_template("search.html", songs=songs1)
+
 
 @app.route('/create', methods=['GET', 'POST'])
 def create():
