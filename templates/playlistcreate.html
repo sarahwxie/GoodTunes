@@ -12,21 +12,24 @@
     <label for="song1">Pick a song:</label>
     <select id="song1" name="songs">
         {% for song in songsdb %}
-        <option value="song">{{song[0]}}</option>
+        <option value="song">{{song}}</option>
         {% endfor %}
     </select>
+    <br/>
     <label for="song2">Pick a song:</label>
     <select id="song2" name="songs">
         {% for song in songsdb %}
-        <option value="song">{{song[1]}}</option>
+        <option value="song">{{song}}</option>
         {% endfor %}
     </select>
+    <br/>
     <label for="song3">Pick a song:</label>
     <select id="song3" name="songs">
         {% for song in songsdb %}
-        <option value="song">{{song[2]}}</option>
+        <option value="song">{{song}}</option>
         {% endfor %}
     </select>
+    <br/>
     <input type="submit" name="submit"/>
 </form>
 
