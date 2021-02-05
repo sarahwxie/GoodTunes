@@ -6,6 +6,28 @@
         <h1 id="searchHeading">Create a Playlist</h1>
     </div>
 
+    <form name="playlist" method="post">
+        <label for="song1">Pick a song:</label>
+        <select id="song1" name="songs">
+            {% for song in songsdb %}
+            <option value="song">{{song}}</option>
+            {% endfor %}
+        </select>
+        <label for="song2">Pick a song:</label>
+        <select id="song2" name="songs">
+            {% for song in songsdb %}
+            <option value="song">{{song}}</option>
+            {% endfor %}
+        </select>
+        <label for="song3">Pick a song:</label>
+        <select id="song3" name="songs">
+            {% for song in songsdb %}
+            <option value="song">{{song}}</option>
+            {% endfor %}
+        </select>
+            <input type="submit" name="submit"/>
+    </form>
+
 </section>
 
 {% endblock %}

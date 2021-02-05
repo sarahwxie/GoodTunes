@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import text
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
+import random
 
 from custom import apology, convert, convertList
 import songs
@@ -157,7 +158,26 @@ def search():
 
 @app.route('/create', methods=['GET', 'POST'])
 def create():
-    return render_template("playlistcreate.html")
+    if request.method=="POST":
+        #song1 = request.form["song1"]
+        #song2 = request.form["song2"]
+        #song3 = request.form["song3"]
+        #playlist=[song1,song2,song3]
+        print("yo")
+        db.engine.execute(
+            text("INSERT INTO playlists (hash, songs) VALUES (:hash, :songs);").execution_options(
+                autocommit=True),
+            #make user field xo
+            hash=generate_password_hash(str(random.randrange(100))),
+            songs=[request.form.get("song1"),request.form.get("song2"),request.form.get("song3")]
+        )
+        #print(playlist)
+        return redirect("/profile")
+    else:
+        return render_template("playlistcreate.html", songsdb=songs.songsdata)
+
+
+
 
 if __name__ == "__main__":
     # runs the application on the repl development server
