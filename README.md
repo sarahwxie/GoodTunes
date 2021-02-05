@@ -2,7 +2,7 @@
 This is our second trimester project for AP CS Principles. GoodTunes is an aspiring social media platform where users can select songs from a database to create playlists, then share those playlists with others. These songs will be analyzed and be selected in the overview for a "AP CSP Wrapped."
 
 ### How to run Goodtunes
-To access the website, visit 76.88.112.116:3000 (the public IP address) OR clone it on your own machine:
+To access the website, visit http://goodtunes.cf/ (the public IP address) OR clone it on your own machine:
 
 Install all necessary packages with `pip install -r requirements.txt`
 
@@ -35,12 +35,10 @@ The UI of the search page was done by Sarah and the page itself can be found [he
 
 Evaluate this big ticket item by searching for a song on our website. Note that we only have 400 songs currently, so you may not find what you are specifically looking for. Instead try a key word or an artist. Right now, it will only show you the first song that the loop finds, but we hope to have this fixed in the future. 
 
-### SQLite Database - Possible extra credit?
+### SQLite Database
 The SQLite database was created by downloading the sqlite.exe application files from the sqlite [website](https://www.sqlite.org/download.html) and creating a database with a users table. Then, signup.html was altered to include a form that posted data to main.py, which then adds the database to the table in real time using INSERT SQL statements. 
 
 Additionally, the `werkzeug.security` module was used to hash the passwords using sha256 encryption to ensure that plaintext passwords weren't stored in the database. Finally, a custom functions file, [custom.py](custom.py) contains a function that notifies users if they are inputting incorrect information (ie. passwords don't match).
-
-Sarah worked on this. 
 
 How the table was created. Note that usernames as well as user IDs must be unique.
 
