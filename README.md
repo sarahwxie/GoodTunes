@@ -8,26 +8,15 @@ Install all necessary packages with `pip install -r requirements.txt`
 
 Run using `python run.py`
 
-# Easter Egg
-Currently, our easter egg is accessible through the navigation bar, but this won't be true in future updates. Find it [here](templates/apjournal.html).
-
-# Goals
-
-### ✔️ Completed Goals ✔️
-* Create a working flask skeleton including working backend, a base.html with a working navbar, and appropriate .css files
-* Build an attractive homepage UI based on our storyboard on canva
-* CSV database of 400 most popular songs in different generes with metadata that will help with analysis in the future.
-* Create login and signup pages that take in user information and use it to interact with a SQL database
-* Build a search page with an attractive UI that is able to search the website for songs
-
-### 📝 Future Goals 📝
-* Auto-generated working user dashboard that are created via the SQL database
-* "Edit my user" button that leads to a page that edits user information
-* Allow users to view and "follow" other users, and have this displayed on the user dashboard
-* APCSP Wrapped that analyzes data after multiple users have created accounts
 
 # Big Ticket Items
 Note: this information can also be found on our [scrum board](https://github.com/sarahwxie/GoodTunes/projects/1)
+
+### Easter Egg
+Currently, access our easter egg by hovering to the left of the words "CSP Wrapped" on the navigation bar. This will lead to a page that displays the our AP Notes with our affirmations. Find it [here](templates/apjournal.html).
+
+### Playlist Creation feature
+Input an artist, title and genre, which takes an input and querries the database to add the particular song to the database.
 
 ### Homepage, Navbar, and styles
 Our homepage code can be found [here](templates/home.html), our navbar code can be found [here](templates/nav.html), and our css code can be found [here](templates/styles.html).
@@ -60,22 +49,21 @@ How the table was created. Note that usernames as well as user IDs must be uniqu
 Evaluate this big ticket item by dowloading this repo, navigating to [this directory](https://github.com/sarahwxie/GoodTunes/tree/main/models), and opening the terminal by typing `cmd` into the search bar. You can view the tables by typing ``sqlite3 myDB.db`` and then ``SELECT * FROM users; ``
 You can view the automatic update feature by clicking on the **signup** button accessed via the homepage and creating an account. If you run the SELECT statement after creating an account you'll see your new account appear in the database. 
 
-# 1/15 Individual + Scrum Master Grading
-Ida Mobini: I created the songs database and passed it into main.py so the search function would work, as well as coded a for loop and retrieved the user input using POST methods. Find my work in [main.py](main.py) and [songs.py](songs.py). 
-* Individual Grading: 4/5 
-* Scrum Master Grading: 13/15
+# Goals
 
-Sarah Xie: I created the sqlite database and integrated it with [main.py](main.py) and [signup.html](templates/signup.html). I also created a custom functions file [custom.py](custom.py) for custom functions, inclduing an apology function that throws errors when users provide incorrect inputs. This required learning SQLite syntax. 
-* Individual Grading: 5/5
-* Scrum Master Grading: 14/15 
+### ✔️ Completed Goals ✔️
+* Create a working flask skeleton including working backend, a base.html with a working navbar, and appropriate .css files
+* Build an attractive homepage UI based on our storyboard on canva
+* CSV database of 400 most popular songs in different generes with metadata that will help with analysis in the future.
+* Create login and signup pages that take in user information and use it to interact with a SQL database
+* Build a search page with an attractive UI that is able to search the website for songs
+* Create an easter egg with a link to our AP notes
 
-Nivu Rethnakar: I worked on and finished on the Login/Sign Up Page relink and created the Profile page that they're now linking to. I also started working on the HTML and CS for the Profile page. Find my work in [main.py](main.py), [login.html](login.html), and [profile.html](profile.html).
-* Individual Grading: 4/5
-* Scrum Master Grading: 15/15
-
-Risa Iwazaki: I worked on starting up the login profile page and the GET POST aspect of the sign up page. I also deployed our web server onto my raspberry pi so we could access the website using the public IP address. 
-* Individual Grading: 3/5
-* Scrum Master Grading: 15/15 
+### 📝 Future Goals 📝
+* Auto-generated working user dashboard that are created via the SQL database
+* "Edit my user" button that leads to a page that edits user information
+* Allow users to view and "follow" other users, and have this displayed on the user dashboard
+* APCSP Wrapped that analyzes data after multiple users have created accounts
 
 
 # Creators
