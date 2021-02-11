@@ -121,6 +121,10 @@ def signup():
 def apjournal():
     return render_template("apjournal.html")
 
+@app.route('/friends/')
+def friends():
+    return render_template("friends.html")
+
 
 @app.route('/profile/')
 def profile():
