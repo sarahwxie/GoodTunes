@@ -125,6 +125,10 @@ def signup():
 def apjournal():
     return render_template("apjournal.html")
 
+@app.route('/friends/')
+def friends():
+    return render_template("friends.html")
+
 
 @app.route('/profile/')
 def profile():
@@ -145,6 +149,9 @@ def search():
     songs1.pop(0)
     return render_template("search.html", songs=songs1)
 
+@app.route('/connect')
+def connect():
+    return render_template("friends.html")
 
 @app.route('/create', methods=['GET', 'POST'])
 def create():
