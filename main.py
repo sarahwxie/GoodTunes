@@ -52,14 +52,18 @@ def login():
         if user == False:
             return render_template("login.html", error=True)
 
+        #set the user id
+        session.clear()
+        session["user_id"] = user["id"]
+
         # redirects us to the user page
-        return redirect(url_for("user", usr=user["username"]))
+        return redirect(url_for("user1", usr=user["username"]))
     else:
         return render_template("login.html", error=False)
 
 
 @app.route("/<usr>")
-def user(usr):
+def user1(usr):
     # compute rows
     resultproxy = db.engine.execute(
         text("SELECT * FROM users WHERE username=:username;").execution_options(autocommit=True),
@@ -161,8 +165,6 @@ def create():
         return redirect("/profile")
     else:
         return render_template("playlistcreate.html", songsdb=songs.songsdata)
-
-
 
 
 if __name__ == "__main__":
