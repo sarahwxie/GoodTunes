@@ -156,17 +156,14 @@ def connect():
 @app.route('/create', methods=['GET', 'POST'])
 def create():
     if request.method=="POST":
-        #song1 = request.form["song1"]
-        #song2 = request.form["song2"]
-        #song3 = request.form["song3"]
-        #playlist=[song1,song2,song3]
+        song1 = request.form["song1"]
         print("yo")
         db.engine.execute(
-            text("INSERT INTO playlists (hash, songs) VALUES (:hash, :songs);").execution_options(
+            text("INSERT INTO playlists (playlistName, user, song) VALUES (:name, :user, :song);").execution_options(
                 autocommit=True),
-            #make user field xo
-            hash=generate_password_hash(str(random.randrange(100))),
-            songs=[request.form.get("song1"),request.form.get("song2"),request.form.get("song3")]
+            name=request.form.get("playlistname"),
+            user=session["user_id"],
+            song=request.form.get(song1)
         )
         #print(playlist)
         return redirect("/profile")

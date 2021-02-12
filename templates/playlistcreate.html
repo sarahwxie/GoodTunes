@@ -9,13 +9,17 @@
 </section>
 
 <form name="playlist" method="post" style="padding:50px">
+    <form>
+        <label for="playlistname">Playlist name: </label><br>
+        <input type="text" id="playlistname" name="playlistname"><br>
+    </form>
     <label for="song1">Pick a song:</label>
     <select id="song1" name="songs">
         {% for song in songsdb %}
         <option value="song">{{song}}</option>
         {% endfor %}
     </select>
-    <br/>
+    <!-- <br/>
     <label for="song2">Pick a song:</label>
     <select id="song2" name="songs">
         {% for song in songsdb %}
@@ -29,7 +33,7 @@
         <option value="song">{{song}}</option>
         {% endfor %}
     </select>
-    <br/>
+    <br/> -->
     <input type="submit" name="submit"/>
 </form>
 
