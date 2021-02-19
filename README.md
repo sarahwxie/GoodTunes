@@ -25,6 +25,23 @@ You can evaluate this big ticket item by visiting our website (see IP above, or 
 
 All four members of our group worked on this big ticket item together. Doing this required collaboration and creativity. 
 
+# College Board Considerations 
+
+### Inputs
+There are multiple forms that the user fills out throughout the code, such as when creating a new account, signing into an existing account, or creating a playlist. Data is passed from the form into main.py. 
+
+### Lists
+Our database of songs is a list that was created from a .csv file. 
+
+### Procedures
+Each procedure in main.py renders a corresponding .html file. Examples are login(), new_user(), and profile(). 
+
+### Outputs
+An example of an output can be found on the profile page after a user logs in. After inputting their username, their profile with their username and data is displayed. 
+
+### Algorithms 
+An example of an algorithm is the iteration that can be found in playlistcreate.html when selecting from the database of songs. Here, we utilize a for loop in Jinja in order to display all of the songs in the form. 
+
 ### Login/Sign Up Pages and User Dashboard
 The login and signup pages can be found [here](templates/login.html) and [here](templates/signup.html). The code that leads the user to a new page after signing in can be found in [main.py](main.py). Risa and Nivu worked on this.
 
@@ -63,21 +80,6 @@ You can view the automatic update feature by clicking on the **signup** button a
 * Allow users to view and "follow" other users, and have this displayed on the user dashboard
 * APCSP Wrapped that analyzes data after multiple users have created accounts
 
-# College Board 
-
-### Inputs
-There are multiple forms that the user fills out throughout the code.
-
-### Lists
-Our database of songs is a list
-
-### Procedures
-Each procedure in main.py renders a corresponding .html file 
-
-### Outputs
-Each corresponding input has it’s designated output which ranges from profile page to the formation of the playlist.
-
-### Algorithms 
 
 
 
