@@ -23,6 +23,7 @@ Each procedure in main.py renders a corresponding .html file. Different routes a
 Each corresponding input has it’s designated output which ranges from profile page to the formation of the playlist. Find the code [here](templates/profile.html). The Web API is used through the random user generator on our user page, which is shown in the user pages. Find the code [here](templates/wrapped.html).
 
 ### Algorithms
+Our whole website demonstrates algorithms throughout by validating data prior to storage in a database. When the user makes a playlist, they click confirm when they choose the song they want to add into their playlist. In main.py under new user: [here](main.py)
 
 
 # Big Ticket Items
