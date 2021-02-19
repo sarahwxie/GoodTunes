@@ -26,7 +26,7 @@ Each corresponding input has it’s designated output which ranges from profile 
 Our whole website demonstrates algorithms throughout by validating data prior to storage in a database. When the user makes a playlist, they click confirm when they choose the song they want to add into their playlist. In main.py under new user: [here](main.py)
 
 # Code Review: 
-
+![sqlite image](static/assets/code.PNG)
 * This portion of our code shows our playlist creation feature, which was the main thing that our group worked on this week
 * It shows us obtaining data from a form and adding this data to the database
 * This week, we created the playlist table, and figured out how to add playlists into it using an id that joins the two images
@@ -66,6 +66,7 @@ Additionally, the `werkzeug.security` module was used to hash the passwords usin
 How the table was created. Note that usernames as well as user IDs must be unique.
 
 ![sqlite image](static/assets/Capture.PNG)
+
 
 Evaluate this big ticket item by dowloading this repo, navigating to [this directory](https://github.com/sarahwxie/GoodTunes/tree/main/models), and opening the terminal by typing `cmd` into the search bar. You can view the tables by typing ``sqlite3 myDB.db`` and then ``SELECT * FROM users; ``
 You can view the automatic update feature by clicking on the **signup** button accessed via the homepage and creating an account. If you run the SELECT statement after creating an account you'll see your new account appear in the database. 
