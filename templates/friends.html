@@ -1,11 +1,75 @@
 {% extends 'base.html' %}
 {% block content %}
+<head>
+    <title>GoodTunes | Find Friends</title>
+    <style>
+        {% include 'wrappedStyles.html' %}
+    </style>
+</head>
 
-<section id="createSection">
+<body>
+<!-- the search banner -->
+<section id="searchSection">
     <div style="display: block; margin-top: 101px;">
-        <h1 id="searchHeading">Add Friends</h1>
+        <h3 id="searchHeading">Search For People You May Know</h3>
+    </div>
+
+    <div id="searchDiv">
+        <div style="margin-bottom: 15px;position: relative;">
+            <img src="/static/assets/search.svg" style="position: absolute;top: 23px;left: 19px;"/>
+            <div id="formInput">
+                <input type="text" id="myInput" placeholder="Search here..."/>
+            </div>
+        </div>
     </div>
 </section>
 
+<!-- show me the songs -->
+<div class="container">
+    <div class="row">
+        <div class="list" id="list">
+            {% for song in songs %}
+            <div class="list-item" style="display:none;">
+                <div class="list-item__avatar">
+                    <img class="logo" src="/static/assets/music.png">
+                </div>
+                <div class="list-item__content">
+                    <strong class="searchable"> {{ song[1] }}</strong>
+                    <span class="list-item__info">{{ song[2] }} <br> Genre: {{ song[0] }} </span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+
+var input = document.getElementById("myInput");
+input.addEventListener("keydown", function (e) {
+    searchFunc();
+});
+
+    // Search
+    function searchFunc(){
+        input = document.getElementById("myInput");
+        var filter = input.value.toLowerCase();
+
+        var container = document.getElementById("list");
+        var elements = container.getElementsByClassName("list-item");
+        for (i = 0; i < elements.length; i++) {
+            elements[i].style.display = "flex";
+            // elements[i].style.display = "none";
+            var title = elements[i].textContent.trim()
+            if (title.toLowerCase().indexOf(input.value) != -1) {
+                elements[i].style.display = "flex";
+            }
+            else{
+                elements[i].style.display = "none";
+            }
+
+        }
+    }
+</script>
 
 {% endblock %}
