@@ -63,6 +63,23 @@ You can view the automatic update feature by clicking on the **signup** button a
 * Allow users to view and "follow" other users, and have this displayed on the user dashboard
 * APCSP Wrapped that analyzes data after multiple users have created accounts
 
+# College Board 
+
+### Inputs
+There are multiple forms that the user fills out throughout the code.
+
+### Lists
+Our database of songs is a list
+
+### Procedures
+Each procedure in main.py renders a corresponding .html file 
+
+### Outputs
+Each corresponding input has it’s designated output which ranges from profile page to the formation of the playlist.
+
+### Algorithms 
+
+
 
 # Creators
 Ida Mobini, Sarah Xie, Risa Iwazaki, Nivedita Rethnakar 
