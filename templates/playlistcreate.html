@@ -8,10 +8,10 @@
 
 </section>
 
-<form name="playlist" method="post" style="padding:50px">
+<form name="playlist" action="/create" method="POST" style="padding:50px">
     <form>
-        <label for="playlistname">Playlist name: </label><br>
-        <input type="text" id="playlistname" name="playlistname"><br>
+        <label for="playlistname">Playlist name: </label>
+        <input type="text" id="playlistname" name="playlistname">
     </form>
     <label for="song1">Pick a song:</label>
     <select id="song1" name="songs">
@@ -19,7 +19,6 @@
         <option value="song">{{song}}</option>
         {% endfor %}
     </select>
-    <!-- <br/>
     <label for="song2">Pick a song:</label>
     <select id="song2" name="songs">
         {% for song in songsdb %}
@@ -33,8 +32,9 @@
         <option value="song">{{song}}</option>
         {% endfor %}
     </select>
-    <br/> -->
-    <input type="submit" name="submit"/>
+    <br/>
+    <button type="submit" >Sign Up</button>
 </form>
+
 
 {% endblock %}

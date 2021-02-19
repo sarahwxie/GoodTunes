@@ -52,7 +52,7 @@ def login():
         if user == False:
             return render_template("login.html", error=True)
 
-        #set the user id
+        # set the user id
         session.clear()
         session["user_id"] = user["id"]
 
@@ -125,6 +125,7 @@ def signup():
 def apjournal():
     return render_template("apjournal.html")
 
+
 @app.route('/friends/')
 def friends():
     return render_template("friends.html")
@@ -132,9 +133,6 @@ def friends():
 
 @app.route('/profile/')
 def profile():
-    session.clear()
-    session["user_id"] = 1
-
     # compute rows
     resultproxy = db.engine.execute(text("SELECT * FROM users WHERE id=:id;").execution_options(autocommit=True),
                                     id=session["user_id"])
@@ -149,15 +147,17 @@ def search():
     songs1.pop(0)
     return render_template("search.html", songs=songs1)
 
+
 @app.route('/connect')
 def connect():
     return render_template("friends.html")
 
+
 @app.route('/create', methods=['GET', 'POST'])
 def create():
-    if request.method=="POST":
+    if request.method == "POST":
         song1 = request.form["song1"]
-        print("yo")
+        print("post")
         db.engine.execute(
             text("INSERT INTO playlists (playlistName, user, song) VALUES (:name, :user, :song);").execution_options(
                 autocommit=True),
@@ -165,9 +165,10 @@ def create():
             user=session["user_id"],
             song=request.form.get(song1)
         )
-        #print(playlist)
+        # print(playlist)
         return redirect("/profile")
     else:
+        print("get")
         return render_template("playlistcreate.html", songsdb=songs.songsdata)
 
 
