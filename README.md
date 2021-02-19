@@ -66,16 +66,16 @@ You can view the automatic update feature by clicking on the **signup** button a
 # College Board 
 
 ### Inputs
-There are multiple forms that the user fills out throughout the code. Find the code [here](templates/signup.html)
+There are multiple forms that the user fills out throughout the code. Find the code [here](templates/signup.html).
 
 ### Lists
-Our database of songs is a list. We used a csv file and gathered songs of different genres into one database. Find the code [here](songs.csv)
+Our database of songs is a list. We used a csv file and gathered songs of different genres into one database. Find the code [here](songs.csv).
 
 ### Procedures
-Each procedure in main.py renders a corresponding .html file. Different routes are used and are redirected on our website. Find the code [here](main.py) 
+Each procedure in main.py renders a corresponding .html file. Different routes are used and are redirected on our website. Find the code [here](main.py).
 
 ### Outputs
-Each corresponding input has it’s designated output which ranges from profile page to the formation of the playlist. Find the code [here](templates/profile.html)
+Each corresponding input has it’s designated output which ranges from profile page to the formation of the playlist. Find the code [here](templates/profile.html).
 
 ### Algorithms 
 
