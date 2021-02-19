@@ -8,6 +8,22 @@ Install all necessary packages with `pip install -r requirements.txt`
 
 Run using `python run.py`
 
+# College Board 
+
+### Inputs
+There are multiple forms that the user fills out throughout the code. When signing up, the user has to meet the requirements of having a certain amount of letters and numbers in their password, and the program validates that. Once the user fills out the indicated information needed, they click the submit button and the program stores the data so the user can sign in another time using the same username and password. Find the code [here](templates/signup.html).
+
+### Lists
+Our database of songs is a list. We used a csv file and gathered songs of different genres into one database. Find the code [here](songs.csv). 
+
+### Procedures
+Each procedure in main.py renders a corresponding .html file. Different routes are used and are redirected on our website. Find the code [here](main.py).
+
+### Outputs
+Each corresponding input has it’s designated output which ranges from profile page to the formation of the playlist. Find the code [here](templates/profile.html). The Web API is used through the random user generator on our user page, which is shown in the user pages. Find the code [here](templates/wrapped.html).
+
+### Algorithms
+
 
 # Big Ticket Items
 Note: this information can also be found on our [scrum board](https://github.com/sarahwxie/GoodTunes/projects/1)
@@ -63,21 +79,6 @@ You can view the automatic update feature by clicking on the **signup** button a
 * Allow users to view and "follow" other users, and have this displayed on the user dashboard
 * APCSP Wrapped that analyzes data after multiple users have created accounts
 
-# College Board 
-
-### Inputs
-There are multiple forms that the user fills out throughout the code. Find the code [here](templates/signup.html).
-
-### Lists
-Our database of songs is a list. We used a csv file and gathered songs of different genres into one database. Find the code [here](songs.csv).
-
-### Procedures
-Each procedure in main.py renders a corresponding .html file. Different routes are used and are redirected on our website. Find the code [here](main.py).
-
-### Outputs
-Each corresponding input has it’s designated output which ranges from profile page to the formation of the playlist. Find the code [here](templates/profile.html).
-
-### Algorithms 
 
 
 
