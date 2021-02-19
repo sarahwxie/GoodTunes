@@ -25,6 +25,12 @@ Each corresponding input has it’s designated output which ranges from profile 
 ### Algorithms
 Our whole website demonstrates algorithms throughout by validating data prior to storage in a database. When the user makes a playlist, they click confirm when they choose the song they want to add into their playlist. In main.py under new user: [here](main.py)
 
+# Code Review: 
+
+* This portion of our code shows our playlist creation feature, which was the main thing that our group worked on this week
+* It shows us obtaining data from a form and adding this data to the database
+* This week, we created the playlist table, and figured out how to add playlists into it using an id that joins the two images
+
 
 # Big Ticket Items
 Note: this information can also be found on our [scrum board](https://github.com/sarahwxie/GoodTunes/projects/1)
