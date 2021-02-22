@@ -153,20 +153,20 @@ def connect():
     return render_template("friends.html")
 
 
-@app.route('/create', methods=['GET', 'POST'])
+@app.route('/create', methods=['POST', 'GET'])
 def create():
     if request.method == "POST":
-        song1 = request.form["song1"]
+        song1 = request.form.get("song1")
         print("post")
+        print(song1)
         db.engine.execute(
-            text("INSERT INTO playlists (playlistName, user, song) VALUES (:name, :user, :song);").execution_options(
+             text("INSERT INTO playlists (playlistName, user, song) VALUES (:name, :user, :song);").execution_options(
                 autocommit=True),
-            name=request.form.get("playlistname"),
+            name=request.form.get("pname"),
             user=session["user_id"],
-            song=request.form.get(song1)
+            song=song1
         )
-        # print(playlist)
-        return redirect("/profile")
+        return render_template("home.html")
     else:
         print("get")
         return render_template("playlistcreate.html", songsdb=songs.songsdata)
