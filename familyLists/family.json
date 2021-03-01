@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Sherry Wen",
+        "gender": "female",
+        "age": 51,
+        "birthplace": "China"
+    },
+    {
+        "name": "Peter Xie",
+        "gender": "male",
+        "age": 53,
+        "birthplace": "China"
+    },
+    {
+        "name": "Sarah Xie",
+        "gender": "female",
+        "age": 16,
+        "birthplace": "Canada"
+    },
+    {
+        "name": "Linda Xie",
+        "gender": "female",
+        "age": 27,
+        "birthplace": "Canada"
+    },
+    {
+        "name": "Yue Wen",
+        "gender": "female",
+        "age": 84,
+        "birthplace": "China"
+    },
+    {
+        "name": "Shu Wen",
+        "gender": "male",
+        "age": 87,
+        "birthplace": "China"
+    }
+]
