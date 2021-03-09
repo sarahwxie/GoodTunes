@@ -57,6 +57,11 @@ This Big Idea involves how programmers can use algorithms to create programs and
     - Using the building blocks Mr. Mortensen gave us in tech talks in creative ways to solve the smaller problems
     - Incorporating functions from other libraries into our code
     - Using loops, conditionals, variables, functions, lists, operations, and classes. 
+    - There are several instances where we use loops. There is a loop in the playlistcreate file in the jinja, and it is a for loop where it displays all of the songs in the database. Find the code [here](playlistcreate.html). 
+    - We use conditionals if the request method = get POST and we use it to validate the user information. Find the code [here](main.py).
+    - We use variables throughout our code to use as a storing location for the data. In our search.html file [here](search.html), different variables such as searchSection and searchHeading are named. 
+    - Our database of songs is a list. We used a csv file and gathered songs of different genres into one database. Find the code [here](songs.csv). 
+    - Classes are used in our project and it creates a user-defined data structure, which holds its own data members and member functions, which can be accessed and used by creating an instance of that class. It can be found in our code [here](friends.html).
 
 The idea of abstraction, or breaking problems into smaller pieces is how we delegate our work and create goals for different members of the scrum
 
