@@ -81,7 +81,9 @@ This Big Idea involves how computers and computer systems transfer data, namly u
 This Big Idea involves how much computing has changed our lives, and what we need to be aware of while programming
 
 - We need to protect our privacy and security as computer users. As computer programmers, we need to remember that we need to be aware of these security concerns and code ethically
-- Everytime a user makes an account anywhere, a password needs to be created. In our project specifically, we set the password length to be 8-20 characters as the length and stored the password hash in a database. In the signup file, [here](templates/signup.html), you can see that the password needs to be confirmed in order to move onto the next step of signing up. 
+- Everytime a user makes an account anywhere, a password needs to be created
+    - In our project specifically, we set the password length to be 8-20 characters as the length and stored the password hash in a database
+    - In the signup file, [here](templates/signup.html), you can see that the password needs to be confirmed in order to move onto the next step of signing up. 
 
 # Code Review: 
 ![sqlite image](static/assets/code.PNG)
