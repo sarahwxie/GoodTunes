@@ -152,7 +152,6 @@ def search():
 def connect():
     return render_template("friends.html")
 
-
 @app.route('/create', methods=['POST', 'GET'])
 def create():
     if request.method == "POST":

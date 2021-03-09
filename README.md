@@ -25,6 +25,52 @@ Each corresponding input has it’s designated output which ranges from profile 
 ### Algorithms
 Our whole website demonstrates algorithms throughout by validating data prior to storage in a database. When the user makes a playlist, they click confirm when they choose the song they want to add into their playlist. In main.py under new user: [here](main.py)
 
+# Big Idea Elaborations
+### Big Idea 1: Creative Development
+
+This idea is focused on the design processes and experimentation used to build projects
+
+Project-based learning helps with Creative Development by:
+- Building collaboration in our pair/share and scrum teams
+- Defining program function and purpose, delegating work and developing goals during innovation week
+- Setting weekly goals while maintaining tight communication to create deliverables in Program Design and Development
+- Debugging our programs collaboratively to identify and correct errors
+- Project-based learning gives us a freeform creative development phase that helps us develop our collaborative and imaginative skills
+### Big Idea 2: Data
+- This Big Idea involves how computers store and process data, and how users interact with this data
+
+- We’ve used Data in our programming first by:
+    - Using binary and hex numbers understand how data is stored (eg. integers to 8-bit binary)
+    - Understand structures for storing data (arrays, lists, tuples, dictionaries)
+    - Extracting information from data (calling dictionaries from a file, indexing arrays, using nested for loops to iterate through 2D arrays)
+    - Using programs with Data (having a Data.py file that is used on our Flask projects to store dictionaries that contain data)
+
+We are currently attempting to add a login/sign up for our website, which would involve a user editing data
+
+### Big Idea 3: Algorithms and Programming
+This Big Idea involves how programmers can use algorithms to create programs and solve problems
+
+- In project based learning, we’ve demonstrated use of Big Idea 3 by:
+    - Breaking down problems into smaller problems
+    - Programming in HTML and CSS
+    - Using the building blocks Mr. Mortensen gave us in tech talks in creative ways to solve the smaller problems
+    - Incorporating functions from other libraries into our code
+    - Using loops, conditionals, variables, functions, lists, operations, and classes. 
+
+The idea of abstraction, or breaking problems into smaller pieces is how we delegate our work and create goals for different members of the scrum
+
+### Big Idea 4: Computing Systems and Networks
+This Big Idea involves how computers and computer systems transfer data, namly using the internet
+
+- We also learned how web servers worked, ie. hosting websites on someone else’s web servers with Repl hosting
+
+- We create websites that are accessible over the internet, and learned how to set up web servers with the raspberry pi
+### Big Idea 5: Impact of Computing
+This Big Idea involves how much computing has changed our lives, and what we need to be aware of while programming
+
+- We need to protect our privacy and security as computer users. As computer programmers, we need to remember that we need to be aware of these security concerns and code ethically
+
+
 # Code Review: 
 ![sqlite image](static/assets/code.PNG)
 * This portion of our code shows our playlist creation feature, which was the main thing that our group worked on this week
