@@ -25,7 +25,7 @@ Each corresponding input has it’s designated output which ranges from profile 
 ### Algorithms
 Our whole website demonstrates algorithms throughout by validating data prior to storage in a database. When the user makes a playlist, they click confirm when they choose the song they want to add into their playlist. In main.py under new user: [here](main.py)
 
-# Big Idea Elaborations
+# CB Big Idea Elaborations
 ### Big Idea 1: Creative Development
 
 This idea is focused on the design processes and experimentation used to build projects
@@ -44,6 +44,7 @@ Project-based learning helps with Creative Development by:
     - Understand structures for storing data (arrays, lists, tuples, dictionaries)
     - Extracting information from data (calling dictionaries from a file, indexing arrays, using nested for loops to iterate through 2D arrays)
     - Using programs with Data (having a Data.py file that is used on our Flask projects to store dictionaries that contain data)
+    
 
 We are currently attempting to add a login/sign up for our website, which would involve a user editing data
 
@@ -69,7 +70,7 @@ This Big Idea involves how computers and computer systems transfer data, namly u
 This Big Idea involves how much computing has changed our lives, and what we need to be aware of while programming
 
 - We need to protect our privacy and security as computer users. As computer programmers, we need to remember that we need to be aware of these security concerns and code ethically
-
+- Everytime a user makes an account anywhere, a password needs to be created. In our project specifically, we set the password length to be 8-20 characters as the length and stored the password hash in a database. In the signup file, [here](templates/signup.html), you can see that the password needs to be confirmed in order to move onto the next step of signing up. 
 
 # Code Review: 
 ![sqlite image](static/assets/code.PNG)
@@ -100,6 +101,7 @@ All four members of our group worked on this big ticket item together. Doing thi
 The login and signup pages can be found [here](templates/login.html) and [here](templates/signup.html). The code that leads the user to a new page after signing in can be found in [main.py](main.py). Risa and Nivu worked on this.
 
 Evaluate this big ticket item by creating an account and signing in. 
+
 
 ### Search Page
 The UI of the search page was done by Sarah and the page itself can be found [here](templates/search.html). Ida did the initial code that searched through the database of songs in response to user input, and Sarah added to it to create the display. The finished product that allows the user to find songs according to key words can be found in [main.py](main.py). 
