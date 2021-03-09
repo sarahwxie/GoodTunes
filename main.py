@@ -76,7 +76,20 @@ def user1(usr):
                 'name': 'That user does not exist!', 'bio': "You probably typed a name in the search bar. The user "
                                                             "you searched for either doesn't exist or deleted their "
                                                             "account"}
-    return render_template("profile.html", user=user)
+    # get the users playlists
+    userPlaylists = db.engine.execute(
+        text("SELECT * FROM playlists WHERE user=:user;").execution_options(autocommit=True),
+        user=user["id"])
+    userPlaylists = convertList(userPlaylists)
+    print(userPlaylists)
+    print(userPlaylists == [])
+
+    # find out if it is the current user
+    currentUser = False
+    if user["id"] == session["user_id"]:
+        currentUser = True
+
+    return render_template("profile.html", user=user, playlists=userPlaylists, currentUser=currentUser)
 
 
 @app.route('/newuser/', methods=["GET", "POST"])
@@ -111,16 +124,6 @@ def new_user():
         return render_template("signup.html")
 
 
-@app.route('/signup', methods=['POST', 'GET'])
-def signup():
-    if request.method == "POST":
-        newuser = request.form["newusername"]  # using name as dictionary key
-        # redirects us to the user page
-        return redirect(url_for("newuser", newusr=newuser))
-    else:
-        return render_template("login.html")
-
-
 @app.route('/apjournal/')
 def apjournal():
     return render_template("apjournal.html")
@@ -129,16 +132,6 @@ def apjournal():
 @app.route('/friends/')
 def friends():
     return render_template("friends.html")
-
-
-@app.route('/profile/')
-def profile():
-    # compute rows
-    resultproxy = db.engine.execute(text("SELECT * FROM users WHERE id=:id;").execution_options(autocommit=True),
-                                    id=session["user_id"])
-
-    user = convert(resultproxy)
-    return render_template("profile.html", user=user)
 
 
 @app.route('/search', methods=['GET', 'POST'])
@@ -156,16 +149,29 @@ def connect():
 def create():
     if request.method == "POST":
         song1 = request.form.get("song1")
+        song2 = request.form.get("song2")
+        song3 = request.form.get("song3")
         print("post")
         print(song1)
+        songList = str([song1, song2, song3])
+        print(songList)
+
+
         db.engine.execute(
-             text("INSERT INTO playlists (playlistName, user, song) VALUES (:name, :user, :song);").execution_options(
+            text("INSERT INTO playlists (playlistName, user, song) VALUES (:name, :user, :song);").execution_options(
                 autocommit=True),
             name=request.form.get("pname"),
             user=session["user_id"],
-            song=song1
-        )
-        return render_template("home.html")
+            song=songList)
+
+
+        resultproxy = db.engine.execute(
+            text("SELECT * FROM users WHERE id=:id;").execution_options(autocommit=True),
+            id=session["user_id"])
+
+        user = convert(resultproxy)
+
+        return redirect(url_for("user1", usr=user["username"]))
     else:
         print("get")
         return render_template("playlistcreate.html", songsdb=songs.songsdata)

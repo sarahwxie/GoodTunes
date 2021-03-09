@@ -9,18 +9,61 @@
 </section>
 
 
+<div style="width:60%; margin-left:auto;margin-right:auto; font-size:16px;">
+    <form name="playlist" action="/create" method="POST" style="padding:50px">
+        <div style="display:block;">
+            <label for="pname">Playlist name</label>
+            <input type="text" id="pname" name="pname" class="pretty">
+        </div>
 
-<form name="playlist" action="/create" method="POST" style="padding:50px">
-    <label for="pname">Playlist name</label>
-    <input type="text" id="pname" name="pname">
+        <div style="display:block;">
+            <label for="song1">Add a song:</label>
+            <select id="song1" name="song1" class="pretty">
+                {% for song in songsdb %}
+                <option value="{{song}}">{{song}}</option>
+                {% endfor %}
+            </select>
+        </div>
 
-    <label for="song1">Pick a song:</label>
-    <select id="song1" name="song1">
-        {% for song in songsdb %}
-        <option value="{{song}}">{{song}}</option>
-        {% endfor %}
+        <div style="display:block;">
+            <label for="song2">Add a song:</label>
+            <select id="song2" name="song2" class="pretty">
+                {% for song in songsdb %}
+                <option value="{{song}}">{{song}}</option>
+                {% endfor %}
+            </select>
+        </div>
 
-    </select>
+        <div style="display:block;">
+            <label for="song3">Add a song:</label>
+            <select id="song3" name="song3" class="pretty">
+                {% for song in songsdb %}
+                <option value="{{song}}">{{song}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <input type="submit" class="pinkBtn" style="display:block; margin-left:auto; margin-right:auto;">
+    </form>
+</div>
+
+<script>
+/**
+    function myFunction() {
+          var x = document.createElement("select");
+          var form = document.getElementById("selectContainer");
+          for (var i = 0; i < )
+          form.appendChild(x);
+    }
+
+    for(var i = 0; i < Object.keys(songsdb).length; i++){
+            if(set[i].checked === true && check === false){
+                check = true;
+                break;
+            }
+        }
+**/
+</script>
+
     <!--
     <form>
         <label for="playlistname">Playlist name: </label>
@@ -43,7 +86,44 @@
         {% endfor %}
     </select>
     <br/> -->
+
+    <!--
+</form>
+
+<form name="playlist" action="/create" method="POST" style="padding:50px">
+
+    <label for="song2">Pick a song:</label>
+    <select id="song2" name="song2">
+        {% for song in songsdb %}
+        <option value="{{song}}">{{song}}</option>
+        {% endfor %}
+
+    </select>
+
+    <form>
+        <label for="playlistname">Playlist name: </label>
+        <input type="text" id="playlistname" name="playlistname">
+    </form>
+    -->
+
+    <!-- <br/>
+    <label for="song2">Pick a song:</label>
+    <select id="song2" name="songs">
+        {% for song in songsdb %}
+        <option value="song">{{song}}</option>
+        {% endfor %}
+    </select>
+    <br/>
+    <label for="song3">Pick a song:</label>
+    <select id="song3" name="songs">
+        {% for song in songsdb %}
+        <option value="song">{{song}}</option>
+        {% endfor %}
+    </select>
+    <br/>
     <input type="submit">
 </form>
+
+-->
 
 {% endblock %}
