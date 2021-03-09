@@ -81,6 +81,8 @@ This Big Idea involves how much computing has changed our lives, and what we nee
 # Big Ticket Items
 Note: this information can also be found on our [scrum board](https://github.com/sarahwxie/GoodTunes/projects/1)
 
+# Further Research
+
 ### Easter Egg
 Currently, access our easter egg by hovering to the left of the words "CSP Wrapped" on the navigation bar. This will lead to a page that displays the our AP Notes with our affirmations. Find it [here](templates/apjournal.html).
 
