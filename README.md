@@ -19,7 +19,7 @@ Our database of songs is a list. We used a .csv file and gathered songs of diffe
 ### Procedures
 Each procedure in main.py renders a corresponding .html file. Different routes are used and are redirected on our website. Find the code [here](main.py). Additionally, we created custom functions that respond to a user's faulty data and convert items in a database into a dictionary. 
 
-(embed code from custom.py here) 
+Find the code [here](custom.py) 
 
 ### Outputs
 Each corresponding input has it’s designated output which ranges from profile page to the formation of the playlist. Find the code [here](templates/profile.html). The Web API is used through the random user generator on our user page, which is shown in the user pages. Find the code [here](templates/wrapped.html).
@@ -27,8 +27,7 @@ Each corresponding input has it’s designated output which ranges from profile 
 ### Algorithms
 Our whole website demonstrates algorithms through loops, conditionals, and other processes. For example, conditional "if" statements validate user information prior to inserting that information into the database. We also utilize processes such as "GET" and "POST" in order to process user input, and through conditional statements this input leads to different pages/outcomes such as [here](main.py). When creating a playlist, a for loop reads each song in our .csv file and displays them for the user to select. The user's choices causes the program to recognize a "POST" procedure and thus the data is inserted into the playlists table in our database. 
 
-(embed playlist creation code in main.py) 
-
+Find the playlist creation code [here](main.py). 
 
 # CB Big Idea Elaborations
 ### Big Idea 1: Creative Development
