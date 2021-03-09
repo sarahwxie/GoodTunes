@@ -32,10 +32,14 @@ This idea is focused on the design processes and experimentation used to build p
 
 Project-based learning helps with Creative Development by:
 - Building collaboration in our pair/share and scrum teams
+    - Our team has our pair share journals as well as our individual journals with preparation to the AP exam. 
 - Defining program function and purpose, delegating work and developing goals during innovation week
 - Setting weekly goals while maintaining tight communication to create deliverables in Program Design and Development
+    - Our [scrum board](https://github.com/sarahwxie/GoodTunes/projects/1) has been helping us keep on track with what we have completed and what we still need to get done. 
+    
 - Debugging our programs collaboratively to identify and correct errors
 - Project-based learning gives us a freeform creative development phase that helps us develop our collaborative and imaginative skills
+    - Our group had a project idea document where we planned different projects we wanted to do, and finalized on one final project, which is this project. 
 ### Big Idea 2: Data
 - This Big Idea involves how computers store and process data, and how users interact with this data
 
@@ -44,7 +48,7 @@ Project-based learning helps with Creative Development by:
     - Understand structures for storing data (arrays, lists, tuples, dictionaries)
     - Extracting information from data (calling dictionaries from a file, indexing arrays, using nested for loops to iterate through 2D arrays)
     - Using programs with Data (having a Data.py file that is used on our Flask projects to store dictionaries that contain data)
-    
+        - In our songs.csv file we have a database of songs that is stored in SQlite where we can view the songs used and selected for each playlist. The code can be found [here](songs.csv).
 
 We are currently attempting to add a login/sign up for our website, which would involve a user editing data
 
@@ -69,7 +73,9 @@ The idea of abstraction, or breaking problems into smaller pieces is how we dele
 This Big Idea involves how computers and computer systems transfer data, namly using the internet
 
 - We also learned how web servers worked, ie. hosting websites on someone else’s web servers with Repl hosting
-
+    - Our website has a public domain http://goodtunes.cf/ and is deployed on the raspberry pi
+    - We learned how to configure Gunicorn & Nginx files as well
+    
 - We create websites that are accessible over the internet, and learned how to set up web servers with the raspberry pi
 ### Big Idea 5: Impact of Computing
 This Big Idea involves how much computing has changed our lives, and what we need to be aware of while programming
