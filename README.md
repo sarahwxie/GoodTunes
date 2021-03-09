@@ -14,16 +14,21 @@ Run using `python run.py`
 There are multiple forms that the user fills out throughout the code. When signing up, the user has to meet the requirements of having a certain amount of letters and numbers in their password, and the program validates that. Once the user fills out the indicated information needed, they click the submit button and the program stores the data so the user can sign in another time using the same username and password. Find the code [here](templates/signup.html).
 
 ### Lists
-Our database of songs is a list. We used a csv file and gathered songs of different genres into one database. Find the code [here](songs.csv). 
+Our database of songs is a list. We used a .csv file and gathered songs of different genres into one database. Find the code [here](songs.csv). 
 
 ### Procedures
-Each procedure in main.py renders a corresponding .html file. Different routes are used and are redirected on our website. Find the code [here](main.py).
+Each procedure in main.py renders a corresponding .html file. Different routes are used and are redirected on our website. Find the code [here](main.py). Additionally, we created custom functions that respond to a user's faulty data and convert items in a database into a dictionary. 
+
+(embed code from custom.py here) 
 
 ### Outputs
 Each corresponding input has it’s designated output which ranges from profile page to the formation of the playlist. Find the code [here](templates/profile.html). The Web API is used through the random user generator on our user page, which is shown in the user pages. Find the code [here](templates/wrapped.html).
 
 ### Algorithms
-Our whole website demonstrates algorithms throughout by validating data prior to storage in a database. When the user makes a playlist, they click confirm when they choose the song they want to add into their playlist. In main.py under new user: [here](main.py)
+Our whole website demonstrates algorithms through loops, conditionals, and other processes. For example, conditional "if" statements validate user information prior to inserting that information into the database. We also utilize processes such as "GET" and "POST" in order to process user input, and through conditional statements this input leads to different pages/outcomes such as [here](main.py). When creating a playlist, a for loop reads each song in our .csv file and displays them for the user to select. The user's choices causes the program to recognize a "POST" procedure and thus the data is inserted into the playlists table in our database. 
+
+(embed playlist creation code in main.py) 
+
 
 # CB Big Idea Elaborations
 ### Big Idea 1: Creative Development
@@ -143,13 +148,6 @@ You can view the automatic update feature by clicking on the **signup** button a
 * Create login and signup pages that take in user information and use it to interact with a SQL database
 * Build a search page with an attractive UI that is able to search the website for songs
 * Create an easter egg with a link to our AP notes
-
-### 📝 Future Goals 📝
-* Auto-generated working user dashboard that are created via the SQL database
-* "Edit my user" button that leads to a page that edits user information
-* Allow users to view and "follow" other users, and have this displayed on the user dashboard
-* APCSP Wrapped that analyzes data after multiple users have created accounts
-
 
 
 
