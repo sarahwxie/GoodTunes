@@ -13,8 +13,8 @@
 <div class="container">
     <div class="row">
         <div style="width:100%; margin-bottom: 4rem; font-size: 2.4rem; position: relative;">
-            <label style="font-weight:700;">Database Users</label>
-            <p style="font-size:24px">Click on a Profile to see the profile page! Also notice the encrypted passwords!</p>
+            <label style="font-weight:700;">Users of GoodTunes</label>
+            <p style="font-size:24px">Click on a Profile to see the profile page! These are the users that use Goodtunes.cf!</p>
         </div>
 
         <!-- start of list items -->
@@ -29,9 +29,11 @@
                     <strong class="list-item__name"> {{ user["name"] }}</strong>
                     <span class="list-item__info">
                         <div>@{{ user["username"] }}</div>
+                        <!--
                         <div style="width: 30ch; overflow: hidden; white-space: nowrap;
                                 text-overflow: ellipsis;">{{ user["hash"] }}
                         </div>
+                        -->
                         </span>
                 </div>
                 <button type="button" class="list-item__button">
@@ -50,7 +52,7 @@
     <div class="row">
         <div class="search" style="width:100%">
             <label>Users generated using the RandomUser.me API</label>
-            <p style="font-size:24px">Notice the searchbar! We're testing the search method here, before deploying to the main search bar.</p>
+            <p style="font-size:24px">If you have no friends or feel lonely, these randomly generated people will be happy to view your playlists.</p>
             <input type="search" data-search="data-search" placeholder="Search users by Username" style="font-size:1.5rem;"/>
         </div>
         <div class="list" id="list" data-searchable="data-searchable"></div>

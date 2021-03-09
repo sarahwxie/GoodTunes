@@ -29,6 +29,9 @@
 
 
     </style>
+    <style>
+        {% include 'wrappedStyles.html' %}
+    </style>
 </head>
 
 <!-- Header -->
@@ -43,21 +46,54 @@
             <p style="max-width: 50%">
                 {{user["bio"]}}
             </p>
+            <!--
             <div class="editButton">
                 Change Photo
                 <input type="file" name="file"/>
             </div>
+            -->
             <div>
-                <h1 style="display:inline-block;"><strong>My Playlists</strong></h1>
+                <h1 style="display:inline-block; margin-top: 50px;"><strong>{{user["username"]}}'s Playlists</strong></h1>
+                {% for playlist in playlists %}
+                <a class="list-item">
+                    <div class="list-item__avatar">
+                        <img src="/static/assets/profile.png" />
+                    </div>
+                    <div class="list-item__content">
+                        <strong class="list-item__name"> {{ playlist["playlistName"] }}</strong>
+                        <span class="list-item__info">
+                        <div>{{ playlist["song"] }}</div>
+                        </span>
+                    </div>
+                    <button type="button" class="list-item__button">
+                        <svg class="feather feather-plus" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                </a>
+                {% endfor %}
+                {% if playlists == [] %}
+                    <p>{{user["username"]}} has no playlists :(</p>
+                {% endif %}
+                {% if currentUser %}
                 <div>
                     <a href="/create" class="pinkBtn"><strong>Create new playlist</strong></a>
                 </div>
+                {% endif %}
+
             </div>
-            <div>
-                <h1 style="display:inline-block;"><strong>My Friends</strong></h1>
+            <div style="padding-bottom:100px;">
+                {% if currentUser %}
+                <h1 style="display:inline-block; margin-top: 50px;"><strong>My Friends</strong></h1>
                 <div>
+                    <p style="margin-top:40px;margin-bottom:40px;">You have no friends :(</p>
                     <a href="/friends" class="pinkBtn"><strong>Find Friends</strong></a>
                 </div>
+                {% else %}
+                <h1 style="display:inline-block; margin-top: 50px;"><strong>{{user["username"]}}'s Friends</strong></h1>
+                <div>
+                    <p style="margin-top:40px;margin-bottom:40px;">This user has no friends :(</p>
+                    <a href="/friends" class="pinkBtn"><strong>Add Friend</strong></a>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>
