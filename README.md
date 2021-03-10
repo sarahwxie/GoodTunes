@@ -139,7 +139,7 @@ Evaluate this big ticket item by dowloading this repo, navigating to [this direc
 You can view the automatic update feature by clicking on the **signup** button accessed via the homepage and creating an account. If you run the SELECT statement after creating an account you'll see your new account appear in the database. 
 
 ### From Individual and Class Lectures
-#### General Notes: DOC LINKED
+#### General Notes: https://docs.google.com/document/d/1eQi231aGrOo5gUUNCcnZdOqgtWRxYtHAYzVen-sLUZc/edit?usp=sharing (is there a better way to link?)
 #### February 9
 Data Abstraction provides a separation between the abstract properties of a data type and the concrete details of its representation. We used data abstractions to manage complexity in our programs without referencing specific details which would make it easier to maintain. Specifically, this was implemented using lists in the CSP Wrapped page. 
 #### February 24
