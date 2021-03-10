@@ -138,6 +138,26 @@ How the table was created. Note that usernames as well as user IDs must be uniqu
 Evaluate this big ticket item by dowloading this repo, navigating to [this directory](https://github.com/sarahwxie/GoodTunes/tree/main/models), and opening the terminal by typing `cmd` into the search bar. You can view the tables by typing ``sqlite3 myDB.db`` and then ``SELECT * FROM users; ``
 You can view the automatic update feature by clicking on the **signup** button accessed via the homepage and creating an account. If you run the SELECT statement after creating an account you'll see your new account appear in the database. 
 
+### From Individual and Class Lectures
+#### General Notes: DOC LINKED
+#### February 9
+Data Abstraction provides a separation between the abstract properties of a data type and the concrete details of its representation. We used data abstractions to manage complexity in our programs without referencing specific details which would make it easier to maintain. Specifically, this was implemented using lists in the CSP Wrapped page. 
+#### February 24
+We used data analysis, filtering, and loading strategies when creating a means of organization for our playlist and friends creation features. The data can be obtained using simple SQL functions, called from SQLAlchemy. However, at where GoodTunes is right now, we aren’t recording quantitative data in our databases nor do we need to count the specific number of users. So, we used this tech talk to test out different ways to load large amounts of data.
+#### March 3
+In terms of the Rest API segment of the Tech Talk, since our project has a large amount of users, we opted out of using a list like method to organize and group our database. In the REST architectural style, data and functionality are considered resources and are accessed using Uniform Resource Identifiers (URIs). However, while working on our family project and the initial runthrough of our songs.cv database, this was useful to note. For the error handling, this was very useful for our ‘Sign-Up’ and hence the ‘Log-In’ Page. We used JavaScript to set up restrictions like minlength and maxlength: minlength="8" maxlength="20." (LINK THE SIGNUP AND LOGIN PAGES HERE)
+#### Febraury 23
+Lists store sets of data in one variable and can be used to call specific items. We used lists (Big Idea 2) throughout our project like for the initial collection of all the songs and users. Having lists madee it much easier to organize our data. When we implemented the search features (for users, songs, playlists) having pre existing lists made it easy to call specific elements.
+#### February 16
+For the AP exam, specifically Section 1 (Program Code) we have met all the base requirements and have implicated the requirements in multiple places throughout the project. The ‘Input’ action is used with our ‘Log-In’ and ‘Sign-Up’ Page and in other places as well. 
+‘Lists’ 
+‘Procedures’
+‘Algorithms’
+‘Output’
+#### February 9
+Data Abstraction provides a separation between the abstract properties of a data type and the concrete details of its representation. We used data abstractions to manage complexity in our programs without referencing specific details which would make it easier to maintain. Specifically, this was implemented using lists in the CSP Wrapped page. 
+
+
 # Goals
 
 ### ✔️ Completed Goals ✔️
